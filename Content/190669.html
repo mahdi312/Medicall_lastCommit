@@ -1,0 +1,81 @@
+<div flex="100" oc-lazy-load="{name:'myApp',files:['Content/190669.js?r=1291719480','Design/design20197.js?r=521191552','Design/design10096.js?r=521191552','Design/design20222.js?r=872563443','Design/design10111.js?r=872563443','scripts/ngMask.min.js','scripts/md-input.css']}">
+    <div ng-controller="Design_20197"></div>
+    <div ng-controller="Design_10096"></div>
+    <div ng-controller="Design_20222"></div>
+    <div ng-controller="Design_10111"></div>
+
+    <div ng-controller="Ctrl190669">
+        <form id="formData" name="formData" layout-padding style="width: 450px">
+            <div layout="column" style="margin :0 auto">
+                <div layout="row" layout-align="center center">
+                    <img style="width: 100px ; " src="../images/lock.png">
+                </div>
+                <div layout="row" layout-align="center center">
+                    <div style="text-align: center">
+                        <span style="font-size:15px; color: #00C6D7;">{{mobileNo.input}}</span>
+                    </div>
+                    <div style="text-align: center">
+                        <span style="font-size:15px; color: #00C6D7;">{{'DEAR_USER' | translate}}</span>
+                        <span style="font-size:15px">{{'VERIFICATION_CODE_HAS_BEEN_SENT_FOR_ABOVE_NUMBER' | translate}}</span>
+                    </div>
+                </div>
+                <md-button
+                        class="md-list-item-content md-primary"
+                        ng-click="makeDesign_293354();" flex="45" flex-xs="100">
+                    <md-icon class="material-icons"></md-icon>
+                    <span class="md-inline-list-icon-label">{{'CHANGE_PHONE_NUMBER' | translate}}</span>
+                </md-button>
+                <md-input-container
+                        flex="100" flex-xs="100">
+                    <md-icon>sms</md-icon>
+                    <input ng-model="Form.verifyCode"
+                           ng-pattern="/^[0-9]/"
+                           minlength="4"
+                           md-minlength="4"
+                           maxlength="4"
+                           md-maxlength="4"
+                           name="verifyCode"
+                           required>
+                    <label>{{'VERIFICATION_CODE'| translate }}</label>
+                    <div class="hint" ng-show="!formData.verifyCode.$touched || formData.verifyCode.$valid">
+                        {{'VERIFY_CODE_HINT' | translate }}
+                    </div>
+                    <div ng-messages="formData.verifyCode.$error" role="alert">
+                        <div ng-message="pattern" class="my-message">
+                            {{ 'VERIFY_CODE_MUST_BE_NUMBER' | translate }}
+                        </div>
+                        <div ng-message="required" class="my-message">
+                            {{ 'VERIFY_CODE_IS_REQUIRED' | translate }}
+                        </div>
+                        <div ng-message="maxlength" class="my-message">
+                            {{ 'VERIFY_CODE_IS_MORE_THAN_4_DIGITS' | translate }}
+                        </div>
+                        <div ng-message="minlength" class="my-message">
+                            {{ 'VERIFY_CODE_IS_LESS_THAN_4_DIGITS' | translate }}
+                        </div>
+                    </div>
+                </md-input-container>
+                <md-button
+
+                        ng-click="makeDesign_293353();" flex="100" flex-xs="100">
+                    <md-icon class="material-icons">send</md-icon>
+                    <span class="md-inline-list-icon-label">{{'CONFIRM_CODE' | translate}}</span>
+                </md-button>
+                <!--  -->
+
+                <!--  -->
+                <md-button
+
+                        ng-click="makeDesign_293355();" flex="45" flex-xs="100">
+                    <md-icon class="material-icons">forward_30</md-icon>
+                    <span class="md-inline-list-icon-label">{{'RESEND_CODE' | translate}}</span>
+                </md-button>
+                <!--  -->
+                <div ng-init="startTimer(600,'timerLimit','100')"></div>
+                <div ng-if="false">
+                    {{timerLimit}}
+                </div>
+            </div>
+        </form>
+    </div>
+</div> 

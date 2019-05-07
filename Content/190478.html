@@ -1,0 +1,56 @@
+<div flex="100" oc-lazy-load="{name:'myApp',files:['Content/190478.js?r=1584296976','Design/design10092.js?r=1584296976','Design/design20198.js?r=1165140939','Design/design10100.js?r=394613011','scripts/ngMask.min.js','scripts/md-input.css']}">
+    <div ng-controller="Design_10092"></div>
+    <div ng-controller="Design_20198"></div>
+    <div ng-controller="Design_10100"></div>
+
+    <div ng-controller="Ctrl190478">
+        <form id="formData" name="formData" layout-padding style="width: 450px">
+            <div layout="column"  style="margin :0 auto">
+                <div layout="row" layout-align="center center" layout-padding>
+                    <img style="width: 100px ; " src="../images/lock.png">
+                </div>
+                <div layout-padding layout="row" layout-align="center center">
+                    <div>
+                        <span style="color: #00C6D7;">{{'DEAR_USER' | translate}}</span>
+                        <span>{{'PLEASE_ENTER_YOUR_NATIONAL_CODE' | translate}}</span>
+                    </div>
+                </div>
+                <md-input-container>
+                    <md-icon style="font-size: 35px;color: #052963;">fingerprint</md-icon>
+                    <input ng-model="Form.nationalCode"
+                           minlength="10" md-minlength="10"
+                           maxlength="10" md-maxlength="10"
+                           name="nationalCode"
+                           required
+                           valid-number
+                           isnationalcode>
+                    <label>{{'NATIONAL_CODE'| translate }}</label>
+                    <!--<div class="hint"-->
+                    <!--ng-show="!formData.nationalCode.$touched || formData.nationalCode.$valid">-->
+                    <!--{{'NATIONAL_CODE_HINT' | translate }}-->
+                    <!--</div>-->
+                    <div ng-messages="formData.nationalCode.$error" role="alert">
+                        <div ng-message="required" class="my-message">
+                            {{ 'NATIONAL_CODE_IS_REQUIRED' | translate }}
+                        </div>
+                        <div ng-message="isnationalcode" class="my-message">
+                            {{ 'ENTER_THE_RIGHT_NATIONAL_CODE' | translate }}
+                        </div>
+                        <div ng-message="maxlength" class="my-message">
+                            {{ 'NATIONAL_CODE_IS_MORE_THAN_10_DIGITS' | translate }}
+                        </div>
+                        <div ng-message="minlength" class="my-message">
+                            {{ 'NATIONAL_CODE_MUST_BE_10_DIGITS' | translate }}
+                        </div>
+                    </div>
+                </md-input-container>
+                <md-button
+                        class="md-raised md-primary"
+                        style="background-color: #052963; border-radius: 4px"
+                        ng-click="(formData.nationalCode.$valid)?makeDesign_272343():''">
+                    <span class="md-inline-list-icon-label">{{'SIGN_IN_SIGN_UP' | translate}}</span>
+                </md-button>
+                <!--  --></div>
+        </form>
+    </div>
+</div>
