@@ -19,6 +19,12 @@
                         <span style="font-size:15px">{{'VERIFICATION_CODE_HAS_BEEN_SENT_FOR_ABOVE_NUMBER' | translate}}</span>
                     </div>
                 </div>
+                <div id="verifyForm">
+                    <input type="text" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}"/>
+                    <input type="text" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}"/>
+                    <input type="text" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}"/>
+                    <input type="text" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}"/>
+                </div>
                 <md-button
                         class="md-list-item-content md-primary"
                         ng-click="makeDesign_293354();" flex="45" flex-xs="100">
@@ -56,16 +62,11 @@
                     </div>
                 </md-input-container>
                 <md-button
-
                         ng-click="makeDesign_293353();" flex="100" flex-xs="100">
                     <md-icon class="material-icons">send</md-icon>
                     <span class="md-inline-list-icon-label">{{'CONFIRM_CODE' | translate}}</span>
                 </md-button>
-                <!--  -->
-
-                <!--  -->
                 <md-button
-
                         ng-click="makeDesign_293355();" flex="45" flex-xs="100">
                     <md-icon class="material-icons">forward_30</md-icon>
                     <span class="md-inline-list-icon-label">{{'RESEND_CODE' | translate}}</span>
@@ -78,4 +79,32 @@
             </div>
         </form>
     </div>
-</div> 
+</div>
+<style>
+    #verifyForm {
+        max-width: 240px;
+        margin: 25px auto 0;
+
+    input {
+        margin: 0 5px;
+        text-align: center;
+        line-height: 80px;
+        font-size: 50px;
+        border: solid 1px #ccc;
+        box-shadow: 0 0 5px #ccc inset;
+        outline: none;
+        width: 20%;
+        transition: all .2s ease-in-out;
+        border-radius: 3px;
+
+    &
+    :focus {
+        border-color: purple;
+        box-shadow: 0 0 5px purple inset;
+    }
+
+    &
+    ::selection {
+        background: transparent;
+    }
+</style>
