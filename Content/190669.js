@@ -32,54 +32,6 @@ $scope.makeDesign_293355 = function(param){
 }
 
 
-    $(function() {
-        'use strict';
-
-        var body = $('body');
-
-        function goToNextInput(e) {
-            var key = e.which,
-                t = $(e.target),
-                sib = t.next('input');
-
-            if (key != 9 && (key < 48 || key > 57)) {
-                e.preventDefault();
-                return false;
-            }
-
-            if (key === 9) {
-                return true;
-            }
-
-            if (!sib || !sib.length) {
-                sib = body.find('input').eq(0);
-            }
-            sib.select().focus();
-        }
-
-        function onKeyDown(e) {
-            var key = e.which;
-
-            if (key === 9 || (key >= 48 && key <= 57)) {
-                return true;
-            }
-
-            e.preventDefault();
-            return false;
-        }
-
-        function onFocus(e) {
-            $(e.target).select();
-        }
-
-        body.on('keyup', 'input', goToNextInput);
-        body.on('keydown', 'input', onKeyDown);
-        body.on('click', 'input', onFocus);
-
-    });
-
- 
- 
  	$rootScope.startTimer = function(limit,variable,step)
 	{
 		$rootScope.__step = step;
@@ -96,33 +48,31 @@ $scope.makeDesign_293355 = function(param){
 
 app.requires.push('ngMaterial','ngStorage','oc.lazyLoad','pascalprecht.translate','ngMessages','ngMask');
 
- app.directive('validNumber', function() {
-  return {
-    require: '?ngModel',
-    link: function(scope, element, attrs, ngModelCtrl) {
-      if(!ngModelCtrl) {
-        return; 
-      }
+app.directive('validNumber', function () {
+    return {
+        require: '?ngModel',
+        link: function (scope, element, attrs, ngModelCtrl) {
+            if (!ngModelCtrl) {
+                return;
+            }
 
-      ngModelCtrl.$parsers.push(function(val) {
-        if (angular.isUndefined(val)) {
-            var val = '';
-        }
-        var clean = val.replace( /[^0-9]+/g, '');
-        if (val !== clean) {
-          ngModelCtrl.$setViewValue(clean);
-          ngModelCtrl.$render();
-        }
-        return clean;
-      });
+            ngModelCtrl.$parsers.push(function (val) {
+                if (angular.isUndefined(val)) {
+                    var val = '';
+                }
+                var clean = val.replace(/[^0-9]+/g, '');
+                if (val !== clean) {
+                    ngModelCtrl.$setViewValue(clean);
+                    ngModelCtrl.$render();
+                }
+                return clean;
+            });
 
-      element.bind('keypress', function(event) {
-        if(event.keyCode === 32) {
-          event.preventDefault();
+            element.bind('keypress', function (event) {
+                if (event.keyCode === 32) {
+                    event.preventDefault();
+                }
+            });
         }
-      });
-    }
-  };
+    };
 });
- 
- 

@@ -11,26 +11,30 @@
                     <img style="width: 100px ; " src="../images/lock.png">
                 </div>
                 <div layout="row" layout-align="center center">
-                    <div style="text-align: center">
+                    <div style="direction: ltr">
                         <span style="font-size:15px; color: #00C6D7;">{{mobileNo.input}}</span>
                     </div>
+                </div>
+                <div layout="row" layout-align="center center">
                     <div style="text-align: center">
                         <span style="font-size:15px; color: #00C6D7;">{{'DEAR_USER' | translate}}</span>
-                        <span style="font-size:15px">{{'VERIFICATION_CODE_HAS_BEEN_SENT_FOR_ABOVE_NUMBER' | translate}}</span>
+                        <span style="font-size:15px; color: #000000;">{{'VERIFICATION_CODE_HAS_BEEN_SENT_FOR_ABOVE_NUMBER' | translate}}</span>
                     </div>
-                </div>
-                <div id="verifyForm">
-                    <input type="text" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}"/>
-                    <input type="text" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}"/>
-                    <input type="text" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}"/>
-                    <input type="text" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}"/>
                 </div>
                 <md-button
                         class="md-list-item-content md-primary"
                         ng-click="makeDesign_293354();" flex="45" flex-xs="100">
-                    <md-icon class="material-icons"></md-icon>
-                    <span class="md-inline-list-icon-label">{{'CHANGE_PHONE_NUMBER' | translate}}</span>
+                    <md-icon class="material-icons" style="color: #052963">refresh</md-icon>
+                    <span class="md-inline-list-icon-label" style="font-size:15px; color: #00C6D7;">{{'CHANGE' | translate}}</span>
+                    <span class="md-inline-list-icon-label" style="font-size:15px; color: #000000;">{{'MOBILE_NUMBER' | translate}}</span>
                 </md-button>
+                <!--<div id="verifyForm" layout="row" layout-align="center center">-->
+                <!--<input  ng-model="Form.verifyCode1" ng-pattern="/^[0-9]{1}/" minlength="4" md-minlength="4" maxlength="1" md-maxlength="1" name="verifyCode" valid-number required/>-->
+                <!--<input  maxLength="1" size="1" min="0" max="9" valid-number pattern="[0-9]{1}"/>-->
+                <!--<input  maxLength="1" size="1" min="0" max="9" valid-number pattern="[0-9]{1}"/>-->
+                <!--<input  maxLength="1" size="1" min="0" max="9" valid-number pattern="[0-9]{1}"/>-->
+                <!--</div>-->
+
                 <md-input-container
                         flex="100" flex-xs="100">
                     <md-icon>sms</md-icon>
@@ -61,50 +65,50 @@
                         </div>
                     </div>
                 </md-input-container>
+
+                <!--<div layout="row" layout-align="center center">-->
+                    <!--<div style="border: groove;background-color: lightgray ;border-radius: 10px;">-->
+                        <!--<md-input-container>-->
+                            <!--<input ng-model="Form.verifyCode1" ng-pattern="/^[0-9]{1}/" minlength="4" md-minlength="4"-->
+                                   <!--maxlength="1" md-maxlength="1" name="verifyCode1" valid-number required/>-->
+                            <!--<div class="md-errors-spacer" style="display: none;"></div>-->
+                        <!--</md-input-container>-->
+                    <!--</div>-->
+                    <!--<div style="border: groove;background-color: lightgray; border-radius: 10px;">-->
+                        <!--<md-input-container>-->
+                            <!--<input ng-model="Form.verifyCode2" ng-pattern="/^[0-9]{1}/" minlength="4" md-minlength="4"-->
+                                   <!--maxlength="1" md-maxlength="1" name="verifyCode2" valid-number required/>-->
+                            <!--<div class="md-errors-spacer" style="display: none;"></div>-->
+                        <!--</md-input-container>-->
+                    <!--</div>-->
+                    <!--<div style="border: groove;background-color: lightgray; border-radius: 10px;">-->
+                        <!--<md-input-container>-->
+                            <!--<input ng-model="Form.verifyCode3" ng-pattern="/^[0-9]{1}/" minlength="4" md-minlength="4"-->
+                                   <!--maxlength="1" md-maxlength="1" name="verifyCode3" valid-number required/>-->
+                            <!--<div class="md-errors-spacer" style="display: none;"></div>-->
+                        <!--</md-input-container>-->
+                    <!--</div>-->
+                    <!--<div style="border: groove;background-color: lightgray ;border-radius: 10px;">-->
+                        <!--<md-input-container>-->
+                            <!--<input ng-model="Form.verifyCode4" ng-pattern="/^[0-9]{1}/" minlength="4" md-minlength="4"-->
+                                   <!--maxlength="1" md-maxlength="1" name="verifyCode4" valid-number required/>-->
+                            <!--<div class="md-errors-spacer" style="display: none;"></div>-->
+                        <!--</md-input-container>-->
+                    <!--</div>-->
+                <!--</div>-->
                 <md-button
-                        ng-click="makeDesign_293353();" flex="100" flex-xs="100">
-                    <md-icon class="material-icons">send</md-icon>
-                    <span class="md-inline-list-icon-label">{{'CONFIRM_CODE' | translate}}</span>
+                        class="md-raised md-primary"
+                        ng-click="makeDesign_293353();" flex="100" flex-xs="100"
+                        style="background-color: #052963; border-radius: 4px">
+                    <span class="md-inline-list-icon-label">{{'SEND_VERIFY_CODE' | translate}}</span>
                 </md-button>
                 <md-button
                         ng-click="makeDesign_293355();" flex="45" flex-xs="100">
                     <md-icon class="material-icons">forward_30</md-icon>
-                    <span class="md-inline-list-icon-label">{{'RESEND_CODE' | translate}}</span>
+                    <span class="md-inline-list-icon-label" style="font-size:15px; color: #00C6D7;">{{'RESEND' | translate}}</span>
+                    <span class="md-inline-list-icon-label" style="font-size:15px; color: #000000;">{{'CODE_TO_MOBILE_NUMBER' | translate}}</span>
                 </md-button>
-                <!--  -->
-                <div ng-init="startTimer(600,'timerLimit','100')"></div>
-                <div ng-if="false">
-                    {{timerLimit}}
-                </div>
             </div>
         </form>
     </div>
 </div>
-<style>
-    #verifyForm {
-        max-width: 240px;
-        margin: 25px auto 0;
-
-    input {
-        margin: 0 5px;
-        text-align: center;
-        line-height: 80px;
-        font-size: 50px;
-        border: solid 1px #ccc;
-        box-shadow: 0 0 5px #ccc inset;
-        outline: none;
-        width: 20%;
-        transition: all .2s ease-in-out;
-        border-radius: 3px;
-
-    &
-    :focus {
-        border-color: purple;
-        box-shadow: 0 0 5px purple inset;
-    }
-
-    &
-    ::selection {
-        background: transparent;
-    }
-</style>

@@ -12,17 +12,20 @@
                 <div layout="row" layout-align="center center">
                     <div style="text-align: center">
                         <span style="font-size:15px; color: #00C6D7;">{{'DEAR_USER' | translate}}</span>
-                        <span style="font-size:15px">{{'PLEASE_ENTER_YOUR_COUNTRY_AND_MOBILE_NUMBER_FOR_SENDING_VERIFY_CODE' | translate}}</span>
+                        <span style="font-size:15px; color: #000000;">{{'VERIFICATION_CODE_HAS_BEEN_SENT_FOR_YOUR_MOBILE_NUMBER' | translate}}</span>
                     </div>
                 </div>
                 <md-input-container
                         flex="100" flex-xs="100">
                     <md-icon>sms</md-icon>
-                    <input ng-model="Form.verifyCode" ng-pattern="/^[0-9]/"
-                           minlength="4" md-minlength="4"
-                           maxlength="4" md-maxlength="4"
-
-                           name="verifyCode" required>
+                    <input ng-model="Form.verifyCode"
+                           ng-pattern="/^[0-9]/"
+                           minlength="4"
+                           md-minlength="4"
+                           maxlength="4"
+                           md-maxlength="4"
+                           name="verifyCode"
+                           required>
                     <label>{{'VERIFICATION_CODE'| translate }}</label>
                     <div class="hint" ng-show="!formData.verifyCode.$touched || formData.verifyCode.$valid">
                         {{'VERIFY_CODE_HINT' | translate }}
@@ -42,28 +45,19 @@
                         </div>
                     </div>
                 </md-input-container>
+
                 <md-button
-                        class="md-list-item-content md-primary"
-                        ng-click="makeDesign_272365();" flex="45" flex-xs="100">
-                    <md-icon class="material-icons">send</md-icon>
-                    <span class="md-inline-list-icon-label">{{'CONFIRM_CODE' | translate}}</span>
+                        class="md-raised md-primary"
+                        ng-click="makeDesign_272365();" flex="100" flex-xs="100"
+                        style="background-color: #052963; border-radius: 4px">
+                    <span class="md-inline-list-icon-label">{{'SEND_VERIFY_CODE' | translate}}</span>
                 </md-button>
-                <!--  -->
                 <md-button
-                        class="md-list-item-content md-primary" ng-disabled="timerlimit<0"
                         ng-click="makeDesign_293190();" flex="45" flex-xs="100">
-                    <md-icon class="material-icons"></md-icon>
-                    <span class="md-inline-list-icon-label">{{'RESEND_CODE' | translate}}</span>
+                    <md-icon class="material-icons">forward_30</md-icon>
+                    <span class="md-inline-list-icon-label" style="font-size:15px; color: #00C6D7;">{{'RESEND' | translate}}</span>
+                    <span class="md-inline-list-icon-label" style="font-size:15px; color: #000000;">{{'CODE_TO_MOBILE_NUMBER' | translate}}</span>
                 </md-button>
-                <!--  -->
-                <div ng-init="startTimer('smsData.expiration_time/100','timerLimit','100')"></div>
-                <div ng-if="false">
-                    {{timerLimit}}
-                </div>
-                <div ng-if="timerLimit>0">
-                    <md-progress-linear md-mode="determinate" value="{{timerLimit/12000}}"
-                                        style="position:absolute;top:10px;width:70%"></md-progress-linear>
-                </div>
             </div>
         </form>
     </div>

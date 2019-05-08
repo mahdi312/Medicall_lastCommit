@@ -2,7 +2,7 @@ var app = angular.module("APP", ['ngMaterial','ngStorage','oc.lazyLoad','pascalp
 
 app.controller("globalCTRL", ['$rootScope','$scope', '$http','$q','$filter','$translate','$mdToast', function ($rootScope,$scope, $http,$q, $filter,$translate,$mdToast){
 	$rootScope.AppTitle="Medicall";
-	$rootScope.BaseUrls="http://172.16.201.42:7001/ehealth-ws-1.2/rest/api/v1/;http://172.16.201.42:7001/ehealth-ws-1.2/rest/api/v1/".split(";");
+	$rootScope.BaseUrls="http://172.16.201.42:7001/ehealth-ws-1.2/rest/api/v1/;http://172.16.201.249:8081/rest/api/v1/".split(";");
 	$rootScope.contents=[];
 	$rootScope.changeLanguage = function (lang) {
 		$translate.use(lang);
@@ -161,8 +161,82 @@ app.config(function ($mdThemingProvider,$translateProvider,$qProvider) {
 		lang = "fa";
 		localStorage.setItem("__localStorage.__lang",lang);
 	}
-	$mdThemingProvider.theme('default').primaryPalette('purple').accentPalette('pink');
-	$qProvider.errorOnUnhandledRejections(false);
+
+    $mdThemingProvider.definePalette('firstpalette', {
+        '50': 'e1e5ec',
+        '100': 'b4bfd0',
+        '200': '8294b1',
+        '300': '506992',
+        '400': '2b497a',
+        '500': '052963',
+        '600': '04245b',
+        '700': '041f51',
+        '800': '031947',
+        '900': '010f35',
+        'A100': '6d84ff',
+        'A200': '3a59ff',
+        'A400': '072eff',
+        'A700': '0025ec',
+        'contrastDefaultColor': 'light',
+        'contrastDarkColors': [
+            '50',
+            '100',
+            '200',
+            'A100'
+        ],
+        'contrastLightColors': [
+            '300',
+            '400',
+            '500',
+            '600',
+            '700',
+            '800',
+            '900',
+            'A200',
+            'A400',
+            'A700'
+        ]
+    });
+    $mdThemingProvider.definePalette('secondarypalette', {
+        '50': 'e0f8fa',
+        '100': 'b3eef3',
+        '200': '80e3eb',
+        '300': '4dd7e3',
+        '400': '26cfdd',
+        '500': '00c6d7',
+        '600': '00c0d3',
+        '700': '00b9cd',
+        '800': '00b1c7',
+        '900': '00a4be',
+        'A100': 'e6fbff',
+        'A200': 'b3f3ff',
+        'A400': '80ebff',
+        'A700': '67e7ff',
+        'contrastDefaultColor': 'light',
+        'contrastDarkColors': [
+            '50',
+            '100',
+            '200',
+            '300',
+            '400',
+            '500',
+            '600',
+            '700',
+            'A100',
+            'A200',
+            'A400',
+            'A700'
+        ],
+        'contrastLightColors': [
+            '800',
+            '900'
+        ]
+    });
+    $mdThemingProvider.theme('mcgtheme')
+        .primaryPalette('firstpalette')
+        .accentPalette('secondarypalette');
+
+    $qProvider.errorOnUnhandledRejections(false);
 	$translateProvider.useStaticFilesLoader({
 		prefix: 'Language/',
 		suffix: '.json'
@@ -170,8 +244,6 @@ app.config(function ($mdThemingProvider,$translateProvider,$qProvider) {
 	.preferredLanguage(lang)
 	.fallbackLanguage(['en', 'fa']);
 });
-	
-app.config(function ($mdThemingProvider) {$mdThemingProvider.theme('default').primaryPalette('purple').accentPalette('pink')});
 
 app.directive('init', function () {
     return {
