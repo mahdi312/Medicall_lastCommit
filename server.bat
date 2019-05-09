@@ -1,2 +1,2 @@
 rem npm install http-server -g
-http-server ./ -c-1 -p 8080
+http-server ./ -c-1 -p 8088

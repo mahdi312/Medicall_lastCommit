@@ -1,4 +1,5 @@
-<div flex="100" oc-lazy-load="{name:'myApp',files:['Content/190481.js?r=1066926130','Design/design10112.js?r=1066926130','Design/design20240.js?r=1066926130','Design/design10117.js?r=1418298021','Design/design20238.js?r=1418298021','scripts/angular-md5.js']}">
+<div flex="100"
+     oc-lazy-load="{name:'myApp',files:['Content/190481.js?r=1066926130','Design/design10112.js?r=1066926130','Design/design20240.js?r=1066926130','Design/design10117.js?r=1418298021','Design/design20238.js?r=1418298021','scripts/angular-md5.js']}">
     <div ng-controller="Design_10112"></div>
     <div ng-controller="Design_20240"></div>
     <div ng-controller="Design_10117"></div>
@@ -7,11 +8,15 @@
     <div ng-controller="Ctrl190481">
         <form id="formData" name="formData" layout-padding style="width: 450px">
             <div layout="column" style="margin :0 auto">
-                <div layout="row" layout-align="center center" layout-padding>
-                    <img style="width: 100px ; " src="../images/lock.png">
+                <div layout="row" layout-align="center center">
+                <md-icon style="height: 110px;
+                                width: 110px;
+                                font-size: 110px;
+                                text-align: center;
+                                color: #00c6d7;">lock</md-icon>
                 </div>
                 <div layout-padding layout="row" layout-align="center center">
-                    <div>
+                    <div style="text-align: center ; font-size: small">
                         <span style="color: #00C6D7;">{{'DEAR_USER' | translate}}</span>
                         <span>{{'PLEASE_ENTER_YOUR_PASSWORD_OF_PERSONAL_DASHBOARD' | translate}}</span>
                     </div>
@@ -23,7 +28,9 @@
                            md-five="true"
                            minlength="6"
                            md-minlength="6"
-                           name="password" required>
+                           name="password"
+                           required
+                           style="width: 386px">
                     <md-icon class="material-icons">visibility_off</md-icon>
                     <label>{{'PASSWORD'| translate }}</label>
                     <div class="hint" ng-show="!formData.password.$touched || formData.password.$valid">
@@ -41,8 +48,7 @@
                 <md-button
                         class="md-raised md-primary"
                         ng-click="(formData.password.$valid)?makeDesign_272372():'';">
-                    <md-icon class="material-icons">security</md-icon>
-                    <span class="md-inline-list-icon-label">{{'APPROVE_AND_CONTINUE' | translate}}</span>
+                    <span class="md-inline-list-icon-label">{{'SIGN_IN' | translate}}</span>
                 </md-button>
             </div>
         </form>

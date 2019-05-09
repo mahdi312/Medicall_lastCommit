@@ -31,7 +31,7 @@ $scope.makeDesign_293330 = function(param){
 	 $rootScope.design_10119($scope,param); 
 } 
  
-
+$scope.agreement = false;
  
  
 }]);

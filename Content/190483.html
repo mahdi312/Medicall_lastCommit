@@ -1,54 +1,69 @@
-<div oc-lazy-load="{name:'myApp',files:['Content/190483.js?r=1439570820','Design/design10103.js?r=669042892','Design/design10150.js?r=2045998611','Design/design10119.js?r=2045998611','scripts/ngMask.min.js','scripts/md-input.css']}"> 
-	<div ng-controller="Design_10103"></div>
-<div ng-controller="Design_10150"></div>
-<div ng-controller="Design_10119"></div>
+<div flex="100"
+     oc-lazy-load="{name:'myApp',files:['Content/190483.js?r=1439570820','Design/design10103.js?r=669042892','Design/design10150.js?r=2045998611','Design/design10119.js?r=2045998611','scripts/ngMask.min.js','scripts/md-input.css']}">
+    <div ng-controller="Design_10103"></div>
+    <div ng-controller="Design_10150"></div>
+    <div ng-controller="Design_10119"></div>
 
-	<div ng-controller="Ctrl190483">
-	    <form id="formData" name="formData">
-			<div id="_template"  class="template" flex="100" layout-wrap layout="column" >
-	<div flex="100" layout-wrap layout="row" layout-align="center center">
-		<div flex="60" flex-xs="100" layout-padding >
-			<div flex="100" layout-wrap layout="row">
-<div ng-init="design_10119(this)" style="display:none"></div>
-<md-input-container 
-	 flex="100" flex-xs="100" >
-    <md-icon>verified_user</md-icon>
-    <input ng-model="patientInfo.doctorNumber" ng-pattern="/^[0-9]/"  
-	  md- 
-	maxlength="6" md-maxlength="6"  
-	
-	name="medicallCouncilCode"  required valid-number   >	
-	<label>{{'MEDICAL_COUNCIL_CODE'| translate }}</label>
-    	<div class="hint" >{{'' | translate }}</div>
-    <div ng-messages="formData.medicallCouncilCode.$error" role="alert"  >
-        <div ng-message="required" class="my-message">
-		{{ 'MEDICAL_COUNCIL_CODE_IS_REQUIRED' | translate }}
-		</div>
-		<div ng-message="pattern" class="my-message">
-		{{ 'MEDICAL_COUNCIL_CODE_IS_NOT_VALID' | translate }}
-		</div>
-		<div ng-message="maxlength" class="my-message">
-		{{ 'MEDICAL_COUNCIL_CODE_MUST_BE_LESS_THAN_6_DIGITS' | translate }}
-		</div>
+    <div ng-controller="Ctrl190483">
+        <form id="formData" name="formData" layout-padding style="width: 450px">
+            <div layout="column" style="margin :0 auto">
+                <div ng-init="design_10119(this)" style="display:none"></div>
+                <div layout="row" layout-align="center center">
+                    <md-icon style="height: 110px;
+                                width: 110px;
+                                font-size: 110px;
+                                text-align: center;
+                                color: #00c6d7;">lock
+                    </md-icon>
+                </div>
+                <div layout="row" layout-align="center center">
+                    <div style="text-align: center">
+                        <span style="font-size:15px; color: #00C6D7;">{{'DEAR_USER' | translate}}</span>
+                        <span style="font-size:15px">{{'PLEASE_ENTER_YOUR_PHYSICIAN_COUNCIL_CODE' | translate}}</span>
+                    </div>
+                </div>
+                <md-input-container>
+                    <input ng-model="patientInfo.doctorNumber"
+                           ng-pattern="/^[0-9]/"
+                           maxlength="6"
+                           md-maxlength="6"
+                           name="medicallCouncilCode"
+                           required
+                           valid-number>
+                    <label>{{'MEDICALL_COUNCIL_CODE'| translate }}</label>
+                    <div class="hint">{{'' | translate }}</div>
+                    <div ng-messages="formData.medicallCouncilCode.$error" role="alert">
+                        <div ng-message="required" class="my-message">
+                            {{ 'MEDICALL_COUNCIL_CODE_IS_REQUIRED' | translate }}
+                        </div>
+                        <div ng-message="pattern" class="my-message">
+                            {{ 'MEDICALL_COUNCIL_CODE_IS_NOT_VALID' | translate }}
+                        </div>
+                        <div ng-message="maxlength" class="my-message">
+                            {{ 'MEDICALL_COUNCIL_CODE_MUST_BE_LESS_THAN_6_DIGITS' | translate }}
+                        </div>
+                    </div>
+                </md-input-container>
+                <div layout="row">
+                    <md-checkbox
+                            style="font-size: 11px ; margin-top: 15px"
+                            ng-model="agreement">
+                        {{'ALL_THE_ABOVE_INFORMATION_IS_UNDER_MY_AGREEMENT'|translate}}
+                    </md-checkbox>
+                    <md-button
+                            class="md-list-item-content md-primary"
+                            ng-disabled="!agreement"
+                            ng-click="makeDesign_272390();">
+                        <span class="md-inline-list-icon-label">{{'CONFIRM' | translate}}</span>
+                    </md-button>
+                    <!--  -->
+                    <md-button
+                            class="md-list-item-content md-primary"
+                            ng-click="makeDesign_293261();">
+                        <span class="md-inline-list-icon-label">{{'CANCEL' | translate}}</span>
+                    </md-button>
+                </div>
+            </div>
+        </form>
     </div>
-</md-input-container>
-<md-button  
-	class="md-list-item-content md-primary" 
-	ng-click="makeDesign_272390();" flex="45" flex-xs="100"  >
-    <md-icon class="material-icons">save</md-icon>
-    <span class="md-inline-list-icon-label">{{'CONFIRM' | translate}}</span>   
-</md-button>
-<!--  -->
-<md-button  
-	class="md-list-item-content md-primary" 
-	ng-click="makeDesign_293261();" flex="45" flex-xs="100"  >
-    <md-icon class="material-icons"></md-icon>
-    <span class="md-inline-list-icon-label">{{'CANCEL' | translate}}</span>   
-</md-button>
-<!--  --></div>  
-		</div>
-	</div>
-</div>
-		</form>
-	</div> 
 </div> 
