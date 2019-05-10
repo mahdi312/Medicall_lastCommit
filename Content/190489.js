@@ -1,4 +1,4 @@
-app = angular.module("APP").controller("Ctrl190489", ['$rootScope','$scope', '$http','$q','$filter','$translate','$mdToast','$http', function ($rootScope,$scope, $http,$q, $filter,$translate,$mdToast,$http){
+app = angular.module("APP").controller("Ctrl190489", ['$rootScope','$scope', '$http','$q','$filter','$translate','$mdToast', function ($rootScope,$scope, $http,$q, $filter,$translate,$mdToast,$http){
 
 	// angularJs-Content -> TemplateType
 	// For Dialog 
@@ -37,7 +37,35 @@ $scope.makeDesign_293027 = function(param){
 }]);
 app.requires.push('ngMaterial','ngStorage','oc.lazyLoad','pascalprecht.translate','ngMessages','angular-md5');
 
- 
+app.directive('passwordVerify', function() {
+    return {
+        restrict: 'A', // only activate on element attribute
+        require: '?ngModel', // get a hold of NgModelController
+        link: function(scope, elem, attrs, ngModel) {
+            if (!ngModel) return; // do nothing if no ng-model
+
+            // watch own value and re-validate on change
+            scope.$watch(attrs.ngModel, function() {
+                validate();
+            });
+
+            // observe the other value and re-validate on change
+            attrs.$observe('passwordVerify', function(val) {
+                validate();
+            });
+
+            var validate = function() {
+                // values
+                var val1 = ngModel.$viewValue;
+                var val2 = attrs.passwordVerify;
+
+                // set validity
+                ngModel.$setValidity('passwordVerify', val1 === val2);
+            };
+        }
+    };
+});
+
  app.directive('mdFive', ['md5',
 	function(md5,$parse) {
 		return {

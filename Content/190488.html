@@ -6,122 +6,134 @@
     <div ng-controller="Design_10119"></div>
 
     <div ng-controller="Ctrl190488">
-        <form id="formData" name="formData">
-            <div id="_template" class="template" flex="100" layout-wrap layout="column">
-                <div flex="100" layout-wrap layout="row" layout-align="center center">
-                    <div flex="60" flex-xs="100" layout-padding>
-                        <div flex="100" layout-wrap layout="row">
-                            <md-input-container
-                                    flex="100" flex-xs="100">
-                                <md-icon>person</md-icon>
-                                <input ng-model="patientInfo.person.firstName"
-                                       ng-pattern="/^([a-zA-Z\u0600-\u06FF,U+0020_ ])+$/"
-                                       md-
-                                       maxlength="25" md-maxlength="25"
-
-                                       name="firstName" required>
-                                <label>{{'FIRST_NAME'| translate }}</label>
-                                <div class="hint">{{'' | translate }}</div>
-                                <div ng-messages="formData.firstName.$error" role="alert">
-                                    <div ng-message="required" class="my-message">
-                                        {{ 'FIRST_NAME_IS_REQUIRED' | translate }}
-                                    </div>
-                                    <div ng-message="pattern" class="my-message">
-                                        {{ 'FIRST_NAME_IS_NOT_VALID' | translate }}
-                                    </div>
-                                    <div ng-message="maxlength" class="my-message">
-                                        {{ 'FIRST_NAME_IS_VERY_LONG' | translate }}
-                                    </div>
-                                </div>
-                            </md-input-container>
-                            <md-input-container
-                                    flex="100" flex-xs="100">
-                                <md-icon>group</md-icon>
-                                <input ng-model="patientInfo.person.lastName"
-                                       ng-pattern="/^([a-zA-Z\u0600-\u06FF,U+0020_ ])+$/"
-                                       md-
-                                       maxlength="50" md-maxlength="50"
-
-                                       name="lastName" required>
-                                <label>{{'LAST_NAME'| translate }}</label>
-                                <div class="hint">{{'' | translate }}</div>
-                                <div ng-messages="formData.lastName.$error" role="alert">
-                                    <div ng-message="required" class="my-message">
-                                        {{ 'LAST_NAME_IS_REQUIRED' | translate }}
-                                    </div>
-                                    <div ng-message="pattern" class="my-message">
-                                        {{ 'LAST_NAME_IS_NOT_VALID' | translate }}
-                                    </div>
-                                    <div ng-message="maxlength" class="my-message">
-                                        {{ 'LAST_NAME_IS_VERY_LONG' | translate }}
-                                    </div>
-                                </div>
-                            </md-input-container>
-                            <!--div ng-init="getDynamicData('__genderList',[{'title':'مرد','id':'11'},{'title':'زن','id':'12'}],'','','',[],this)"></div-->
-
-                            <div data-ng-init=" __genderList =  " style="display:none"></div>
-                            <div data-ng-init=" patientInfo.person.gender =  " style="display:none"></div>
-
-                            <md-input-container flex="50" flex-xs="100" md-no-float>
-                                <md-icon>person</md-icon>
-                                <md-select required
-
-                                           md-on-open="getDynamicData('__genderList',[{'title':'مرد','id':'11'},{'title':'زن','id':'12'}],'','','',[],this)"
-                                           ng-model="patientInfo.person.gender" placeholder="{{'GENDER' | translate}}">
-                                    <md-option ng-repeat="item in __genderList" value="{{item.id}}">
-                                        {{item.title}}
-                                    </md-option>
-                                </md-select>
-                            </md-input-container>
-                            <div ng-init="=setFilterForDate('','','','')"></div>
-                            <div ng-init="=setFilterForDate('','','','')"></div>
-
-                            <div ng-init="patientInfo.person.birthDate=setStandardDate()"></div>
-                            <md-input-container flex="50" flex-xs="100">
-                                <label>{{'BIRTH_DATE'| translate }}</label>
-                                <md-persian-datepicker
-
-
-                                        ng-model="patientInfo.person.birthDate"
-                                        name="birthDate"></md-persian-datepicker>
-                                <div ng-messages="formData.firstName.$error" role="alert">
-                                    <div ng-message="required" class="my-message">
-                                        {{ 'FIRST_NAME_IS_REQUIRED' | translate }}
-                                    </div>
-                                    <div ng-message="pattern" class="my-message">
-                                        {{ 'FIRST_NAME_IS_NOT_VALID' | translate }}
-                                    </div>
-                                    <div ng-message="maxlength" class="my-message">
-                                        {{ 'FIRST_NAME_IS_VERY_LONG' | translate }}
-                                    </div>
-                                </div>
-                            </md-input-container>
-
-
-                            <md-button
-                                    class="md-list-item-content md-primary"
-                                    ng-click="makeDesign_272396();" flex="30" flex-xs="100">
-                                <md-icon class="material-icons">next</md-icon>
-                                <span class="md-inline-list-icon-label">{{'NEXT' | translate}}</span>
-                            </md-button>
-                            <!--  -->
-                            <md-button
-                                    class="md-list-item-content md-primary"
-                                    ng-click="makeDesign_272395();" flex="30" flex-xs="100">
-                                <md-icon class="material-icons">back</md-icon>
-                                <span class="md-inline-list-icon-label">{{'BACK' | translate}}</span>
-                            </md-button>
-                            <!--  -->
-                            <md-button
-                                    class="md-list-item-content md-primary"
-                                    ng-click="makeDesign_293026();" flex="30" flex-xs="100">
-                                <md-icon class="material-icons"></md-icon>
-                                <span class="md-inline-list-icon-label">{{'CANCEL' | translate}}</span>
-                            </md-button>
-                            <!--  -->
-                            <div ng-init="design_10119(this)" style="display:none"></div>
-                        </div>
+        <form id="formData" name="formData" layout-padding style="width: 450px">
+            <div layout="column" style="margin :0 auto">
+                <div ng-init="design_10119(this)" style="display:none"></div>
+                <div layout="row" layout-align="center center">
+                    <md-icon style="height: 110px;
+                                width: 110px;
+                                font-size: 110px;
+                                text-align: center;
+                                color: #00c6d7;">lock
+                    </md-icon>
+                </div>
+                <div layout="row" layout-align="center stretch">
+                    <div style="text-align: center">
+                        <span style="font-size:15px; color: #00C6D7;">{{'DEAR_USER' | translate}}</span>
+                        <span style="font-size:15px">{{'PLEASE_ENTER_YOUR_ACCOUNT_INFORMATION' | translate}}</span>
                     </div>
+                </div>
+                <div layout="row" layout-wrap style="margin-top: -35px">
+                    <div layout="column" flex="40" layout-align="center stretch">
+                        <md-input-container>
+                            <md-icon>person</md-icon>
+                            <div class="md-errors-spacer" style="display: none;">
+                                <div class="md-char-counter">0 / 25</div>
+                            </div>
+                            <input ng-model="patientInfo.person.firstName"
+                                   ng-pattern="/^([a-zA-Z\u0600-\u06FF,U+0020_ ])+$/"
+                                   md-
+                                   maxlength="25" md-maxlength="25"
+
+                                   name="firstName" required>
+                            <label>{{'FIRST_NAME'| translate }}</label>
+                            <div class="hint">{{'' | translate }}</div>
+                            <div ng-messages="formData.firstName.$error" role="alert">
+                                <div ng-message="required" class="my-message">
+                                    {{ 'FIRST_NAME_IS_REQUIRED' | translate }}
+                                </div>
+                                <div ng-message="pattern" class="my-message">
+                                    {{ 'FIRST_NAME_IS_NOT_VALID' | translate }}
+                                </div>
+                                <div ng-message="maxlength" class="my-message">
+                                    {{ 'FIRST_NAME_IS_VERY_LONG' | translate }}
+                                </div>
+                            </div>
+                        </md-input-container>
+                        <div data-ng-init=" __genderList =  " style="display:none"></div>
+                        <div data-ng-init=" patientInfo.person.gender =  " style="display:none"></div>
+                        <md-input-container>
+                            <md-icon>person</md-icon>
+                            <md-select required
+                                       md-on-open="getDynamicData('__genderList',[{'title':'مرد','id':'11'},{'title':'زن','id':'12'}],'','','',[],this)"
+                                       ng-model="patientInfo.person.gender"
+                                       placeholder="{{'GENDER' | translate}}">
+                                <md-option ng-repeat="item in __genderList" value="{{item.id}}">
+                                    {{item.title}}
+                                </md-option>
+                            </md-select>
+                        </md-input-container>
+                    </div>
+                    <div layout="column"
+                         flex="60"
+                         ayout-align="center stretch"
+                         style="margin-top:35px  ; padding: 5px">
+                        <md-input-container style="left: -13px; width: 200px;">
+                            <md-icon>group</md-icon>
+                            <div class="md-errors-spacer" style="display: none;">
+                                <div class="md-char-counter">0 / 50</div>
+                            </div>
+                            <input ng-model="patientInfo.person.lastName"
+                                   ng-pattern="/^([a-zA-Z\u0600-\u06FF,U+0020_ ])+$/"
+                                   md-
+                                   maxlength="50" md-maxlength="50"
+
+                                   name="lastName" required>
+                            <label>{{'LAST_NAME'| translate }}</label>
+                            <div class="hint">{{'' | translate }}</div>
+                            <div ng-messages="formData.lastName.$error" role="alert">
+                                <div ng-message="required" class="my-message">
+                                    {{ 'LAST_NAME_IS_REQUIRED' | translate }}
+                                </div>
+                                <div ng-message="pattern" class="my-message">
+                                    {{ 'LAST_NAME_IS_NOT_VALID' | translate }}
+                                </div>
+                                <div ng-message="maxlength" class="my-message">
+                                    {{ 'LAST_NAME_IS_VERY_LONG' | translate }}
+                                </div>
+                            </div>
+                        </md-input-container>
+                        <div ng-init="=setFilterForDate('','','','')"></div>
+                        <div ng-init="=setFilterForDate('','','','')"></div>
+                        <div ng-init="patientInfo.person.birthDate=setStandardDate()"></div>
+                        <md-input-container>
+                            <label>{{'BIRTH_DATE'| translate }}</label>
+                            <md-persian-datepicker
+                                    ng-model="patientInfo.person.birthDate"
+                                    name="birthDate">
+                            </md-persian-datepicker>
+                            <div ng-messages="formData.birthDate.$error" role="alert">
+                                <div ng-message="required" class="my-message">
+                                    {{ 'BIRTH_DATE_IS_REQUIRED' | translate }}
+                                </div>
+                                <div ng-message="pattern" class="my-message">
+                                    {{ 'BIRTH_DATE_IS_NOT_VALID' | translate }}
+                                </div>
+                            </div>
+                        </md-input-container>
+                    </div>
+                </div>
+                <div
+                        layout="row"
+                        layout-wrap
+                        layout-align="center stretch"
+                        style="margin-top: -25px">
+                    <md-checkbox
+                            style="font-size: 11px ; margin-top: 15px"
+                            ng-model="agreement">
+                        {{'ALL_THE_ABOVE_INFORMATION_IS_UNDER_MY_AGREEMENT'|translate}}
+                    </md-checkbox>
+                    <md-button
+                            class="md-list-item-content md-primary"
+                            ng-click="makeDesign_272396();"
+                            ng-disabled="!agreement">
+                        <span class="md-inline-list-icon-label">{{'CONFIRM' | translate}}</span>
+                    </md-button>
+                    <md-button
+                            class="md-list-item-content md-primary"
+                            ng-click="makeDesign_293026();">
+                        <span class="md-inline-list-icon-label">{{'CANCEL' | translate}}</span>
+                    </md-button>
                 </div>
             </div>
         </form>

@@ -37,7 +37,8 @@
     }
 
     .___modern.cnt2 {
-        background: #eaeaea
+        background: #eaeaea;
+        border-radius: 8px;
     }
 
     .___modern.cnt3 {
@@ -45,7 +46,7 @@
     }
 </style>
 <div flex="100" layout="row" layout-align="center center">
-    <div layout="row" class="__modern" flex="67" style="margin-top: 50px" layout-align="center center">
+    <div layout="row" class="__modern" flex="67" style="margin-top: 35px ; margin-bottom: 40px" layout-align="center center">
         <div ng-repeat="content in contents" layout="row" >
             <div flex="100"  class="___modern
 				{{content.index==(contents|filter:pageContentId:pageContentId)[0].index?'cnt1':''}}
@@ -63,7 +64,7 @@
          ng-include="'Content/'+content.pageContentId+'.html?r='+rand"
          flex="100"
          layout="column"
-         style="height: calc(100vh - 64px);"
+         style="height: calc(100vh - 250px);"
          layout-align="center center">
     ></div>
 </div>
