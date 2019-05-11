@@ -81,6 +81,7 @@
 	"SIGN_OUT": "Sign out",
 	"GO_TO_YOUR_PATIENT_DASHBOARD": "Go To Your Patient Dashboard",
 	"GO_TO_YOUR_PERSONAL_DASHBOARD": "Go To Your Personal Dashboard",
+	"GO_TO_YOUR_PHYSICIAN_DASHBOARD": "Go To Your Physician Dashboard",
 	"ARE_YOU_A_PHYSICIAN?": "Are You A Physician?",
 	"ARE_YOU_A_SECRETARY?": "Are You A Secretary?",
 	"CONGRATULATION_!": "congratulation!",
@@ -134,6 +135,7 @@
 	"MEDICALL_COUNCIL_CODE_IS_REQUIRED": "Medicall Council Code Is Required",
 	"MANDATORY_ADDRESS_IS_REQUIRED": "Mandatory Address Is Required",
 	"MANDATORY_ADDRESS_MUST_BE_LESS_THAN_100_CHARS": "Mandatory Address Must Be Less Than 100 Characters",
+	"MANDATORY_ADDRESS_MUST_BE_MORE_THAN_15_CHARS": "Mandatory Address Must Be More Than 15 Characters",
 	"SUPPLEMENTARY_ADDRESS_IS_REQUIRED": "Supplementary Address Is Required",
 	"SUPPLEMENTARY_ADDRESS_MUST_BE_LESS_THAN_100_CHARS": "Supplementary Address Must Be Less Than 100 Characters",
 	"GENERAL_WORKPLACE_PHONE_NUMBER_IS_REQUIRED": "General Workplace Phone Number Is Required",
@@ -176,6 +178,10 @@
 	"MY_TIMELINE": "My Timeline",
 	"PIC": "Picture",
 
+	"NO_DIFFRENCE":"No matter",
+	"TODAY":"Today",
+	"THREE_DAYS_LATER":"Next 3 days",
+	"ONE_WEEK_LATER":"Next week",
 
 	"CONFIRM": "Approve",
 	"APPROVE": "Approve",
@@ -199,6 +205,8 @@
 	"PHYSICIAN_COUNCIL_CODE":"Physician Council Code",
 	"PLEASE_ENTER_YOUR_PHYSICIAN_COUNCIL_CODE":"Please Enter Your Physician Council Code",
 	"PLEASE_ENTER_YOUR_ACCOUNT_INFORMATION":"Please Enter Your Account Information",
+	"PLEASE_CHOOSE_YOUR_SPECIALTY":"Please Choose Your Specialty",
+	"PLEASE_ENTER_YOUR_WORKPLACE_INFORMATION":"Please Enter Your Workplace Information",
 	"ACCOUNT_INFO":"Account Information",
 	"SET_PASSWORD":"Password Setting",
 	"WORKPLACE_INFO":"Workplace Information",
@@ -208,6 +216,7 @@
 	"ARE_YOU_SURE_TO_WANT_TO_DELETE?":"Are You Sure To Want To Delete Your Physician Registration?",
 
 	"CHANGE_ACCOUNT":"You can change your account setting here.",
+	"YOUR_INFORMATION_HAS_BEEN_SAVED_IN_THE_MEDICALL_COMPREHENSIVE_SYSTEM":"Your Information Has Been Saved In The Medicall Comprehensive System",
 
 	"ACCOUNT_STATUS":"Account Status:",
 	"USER_IS_ACTIVE":"Your user is currently active",

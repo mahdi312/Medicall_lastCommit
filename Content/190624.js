@@ -1,5 +1,72 @@
 app = angular.module("APP").controller("Ctrl190624", ['$rootScope','$scope', '$http','$q','$filter','$translate','$mdToast','$http', function ($rootScope,$scope, $http,$q, $filter,$translate,$mdToast,$http){
-
+	
+	$scope.options = [
+        {
+          name: 'میزان رضایت بیماران',
+          id: '1'
+        }
+		
+    ];
+	$scope.type = $scope.options[0].value;
+    $scope.selectedOption = $scope.options[0];
+	$scope.convertTodayToPersianFilter=function(){
+		$scope.todayDate=$scope.today.jDate();
+		$scope.todayMonth=$scope.today.jMonth()+1;
+		$scope.todayYear=$scope.today.jYear();
+		$scope.todayDateName=new persianDate([$scope.todayYear,$scope.todayMonth,$scope.todayDate]).format('dddd'); 
+		$scope.todayMonthName=new persianDate([$scope.todayYear,$scope.todayMonth,$scope.todayDate]).format('MMMM');
+	}
+	
+	$scope.convertTomarrowToPersianFilter=function(){
+		$scope.tomarrowDate=$scope.tomarrow.jDate();
+		$scope.tomarrowMonth=$scope.tomarrow.jMonth()+1;
+		$scope.tomarrowYear=$scope.tomarrow.jYear();
+		$scope.tomarrowDateName=new persianDate([$scope.tomarrowYear,$scope.tomarrowMonth,$scope.tomarrowDate]).format('dddd'); 
+		$scope.tomarrowMonthName=new persianDate([$scope.tomarrowYear,$scope.tomarrowMonth,$scope.tomarrowDate]).format('MMMM');
+	}
+	
+	$scope.convertDayAfterTomarrowToPersianFilter=function(){
+		$scope.dayAfterTomarrowDate=$scope.dayAfterTomarrow.jDate();
+		$scope.dayAfterTomarrowMonth=$scope.dayAfterTomarrow.jMonth()+1;
+		$scope.dayAfterTomarrowYear=$scope.dayAfterTomarrow.jYear();
+		$scope.dayAfterTomarrowDateName=new persianDate([$scope.dayAfterTomarrowYear,$scope.dayAfterTomarrowMonth,$scope.dayAfterTomarrowDate]).format('dddd'); 
+		$scope.dayAfterTomarrowMonthName=new persianDate([$scope.dayAfterTomarrowYear,$scope.dayAfterTomarrowMonth,$scope.dayAfterTomarrowDate]).format('MMMM');
+	}
+	
+	$scope.setLocal=function(local){
+		$scope.today=moment();
+		$scope.tomarrow=moment().add(1,'days');
+		$scope.dayAfterTomarrow=moment().add(2,'days');	
+		if(local=='fa'){
+			//today
+			$scope.convertTodayToPersianFilter();
+			//tomarrow
+			$scope.convertTomarrowToPersianFilter();
+			//dayAfterTomarrow
+			$scope.convertDayAfterTomarrowToPersianFilter();
+		}
+	}
+	
+	$scope.next=function(){
+		$scope.today=$scope.tomarrow;
+		$scope.convertTodayToPersianFilter();
+				
+		$scope.tomarrow=$scope.dayAfterTomarrow;
+		$scope.convertTomarrowToPersianFilter();
+		
+		$scope.dayAfterTomarrow=moment($scope.tomarrow).add(1,'days');
+		$scope.convertDayAfterTomarrowToPersianFilter();
+	}
+	$scope.last=function(){
+		$scope.dayAfterTomarrow=$scope.tomarrow;
+		$scope.convertDayAfterTomarrowToPersianFilter();
+		
+		$scope.tomarrow=$scope.today;
+		$scope.convertTomarrowToPersianFilter();
+		
+		$scope.today=moment($scope.today).add(-1,'days');
+		$scope.convertTodayToPersianFilter();
+	}
 	// angularJs-Content -> TemplateType
 	// For Dialog 
 	$scope.getDynamicData = function(variable,staticData,baseUrlId,url,catalog,filter,$scope){
@@ -37,6 +104,10 @@ $scope.makeDesign_293131 = function(param){
 
 $scope.makeDesign_293132 = function(param){ 
 	 $rootScope.design_20215($scope,param); 
+} 
+
+$scope.makeDesign_303521 = function(param){ 
+	 $rootScope.design_30255($scope,param); 
 } 
  
 

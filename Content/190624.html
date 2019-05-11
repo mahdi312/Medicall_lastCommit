@@ -1,83 +1,125 @@
-<div oc-lazy-load="{name:'myApp',files:['Content/190624.js?r=789588753','Design/design20215.js?r=19060825','Design/design20215.js?r=19060825','Design/design20215.js?r=19060825','Design/design20215.js?r=19060825','Design/design20215.js?r=19060825','scripts/ngMask.min.js','scripts/md-input.css']}"> 
-	<div ng-controller="Design_20215"></div>
+<div oc-lazy-load="{name:'myApp',files:['Content/190624.js?r=326348164','Design/design20215.js?r=326348164','Design/design30255.js?r=326348164','scripts/ngMask.min.js','scripts/md-input.css','scripts/persian-date.js']}">
 <div ng-controller="Design_20215"></div>
-<div ng-controller="Design_20215"></div>
-<div ng-controller="Design_20215"></div>
-<div ng-controller="Design_20215"></div>
+<div ng-controller="Design_30255"></div>
+<div ng-controller="Ctrl190624">
+	<div style="margin:0;padding:0">
+		<form id="formData" name="formData" style="margin:0;padding:0" layout-padding >
+			<div style="background-color:#f6f4ff" layout="row" layout-align="center center" layout-wrap>
+				<div flex="75" layout="row">
+				<div flex="100" layout="row" style="background-color: white;border-radius: 20px;">
+					<div layout="row" layout-align="center center">
+						<md-icon style="color: #052963;margin: 5px;">search</md-icon>
+					</div>
+					<div flex="100">
+						<input placeholder="جستجوی سریع" style="width: 100%;height: 35px;border: none;border-radius: 18px;outline: none;font-size: 15px;" ng-model="Form.input">
+					</div>
+				</div>
+				</div>
+				<div flex="15">
+					<md-button
+							style="width: 100%;background-color: #052963;border-radius: 18px;" flex-gt-sm class="md-block"
+							class="md-primary"
+							ng-click="makeDesign_293251();">
+						<span class="md-inline-list-icon-label">{{'جستجو' | translate}}</span>
+					</md-button>
+				</div>
+				<div flex="75">
+					<div flex="100" layout="row" layout-align="space-between center">
+						<div flex="20" style="border: 1px solid; border-radius: 22px;padding: 5px;font-size: 15px;background-color:white" layout="row">
+							<md-select id="cityComboBox" flex="100"
+									style="padding:0;margin:0"
+									md-on-open="getDynamicData('__cityList','','0','/base/list/city','country',[],this)"
+									ng-model="Form.city.id" placeholder="{{'شهر' | translate}}">
+								<md-option ng-repeat="item in __cityList" value="{{item.id}}">
+									{{item.name}}
+								</md-option>
+							</md-select>
+						</div>
+						<div layout="row" layout-align="space-between center" style="font-size:12px;background-color: white;color: black;border-radius: 22px;">
+							<div layout="row" layout-align="center center">
+								<md-icon style="margin: 5px;color: #032a61;">supervisor_account</md-icon>
+								<md-input-container style="padding:0;margin:0" class="md-block" flex-gt-sm>
+									<md-radio-group style="padding:0;margin:0" flex-gt-sm layout-padding layout="row"
+													ng-model="Form.person.gender.id">
+										<md-radio-button
+												ng-repeat="item in [{'title':'MALE','id':11},{'title':'FEMALE','id':12},{'title':'NO_DIFFRENCE','id':13}]"
+												class="md-primary" value="{{item.id}}">{{item.title|translate}}
+										</md-radio-button>
+									</md-radio-group>
+								</md-input-container>
+							</div>
+						</div>
+						<div layout="row" style="font-size:12px;background-color: white;color: black;border-radius: 22px;">
+							<div layout="row" layout-align="center center">
+								<md-icon style="margin: 5px;color: #032a61;">schedule</md-icon>
+								<md-input-container style="padding:0;margin:0" class="md-block" flex-gt-sm>
+									<md-radio-group style="padding:0;margin:0" flex-gt-sm layout-padding layout="row"
+													ng-model="Form.person.time.id">
+										<md-radio-button
+												ng-repeat="item in [{'title':'TODAY','id':1},{'title':'THREE_DAYS_LATER','id':2},{'title':'ONE_WEEK_LATER','id':3},{'title':'NO_DIFFRENCE','id':4}]"
+												class="md-primary" value="{{item.id}}">{{item.title|translate}}
+										</md-radio-button>
+									</md-radio-group>
+								</md-input-container>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div flex="15">
+					<md-button
+							style="width:100%;background-color:white;color: #818286;border-radius: 18px;" flex-gt-sm class="md-block"
+							class="md-primary"
+							ng-click="flag=!flag">
+							<md-icon style="color:#072a64;font-size: 28px;">
+								{{!flag?'keyboard_arrow_down':'keyboard_arrow_up'}}
+							</md-icon>
+						<span class="md-inline-list-icon-label">{{'جستجوی پیشرفته' | translate}}</span>
+					</md-button>
+				</div>
+			</div>
+			<div  layout="row" layout-align="center center">
+				<div flex="90">
+					<div flex="100" style="color:black;background-color:white" layout="row" layout-align="space-between center">
+						<div style="border: 1px solid; border-radius: 22px;padding: 5px;font-size: 15px;" layout="row">
+							<div style="color:#818286">مرتب سازی:</div>
+							<select
+								style="border: none;outline: none;"
+								ng-init="payment = options[0]"
+								name="type"
+								ng-model="payment"
+								ng-options="option.name for option in options">
+							</select>
+						</div>
+						<div style="color:black;font-size: 15px;">
+							<div layout="row" layout-align="center center" layout-padding ng-init="setLocal('fa')">
+								<div layout="row" layout-align="center center"><md-icon style="color:#062963;cursor: pointer;outline: none;" ng-click="next()">keyboard_arrow_right</md-icon></div>
+								<div layout="column" layout-align="center center" style="background: #dff7f9;width: 100px;">
+									<div>{{todayDateName}}</div><!-- -->
+									<div style="color:#4bd0e1">{{todayDate}} {{todayMonthName}}</div>
+								</div>
+								<div layout="column" layout-align="center center" style="background-color:#c9f1f3;width: 100px;">
+									<div>{{tomarrowDateName}}</div>
+									<div style="color:#4bd0e1">{{tomarrowDate}} {{tomarrowMonthName}}</div>
+								</div>
+								<div layout="column" layout-align="center center" style="background: #dff7f9;width: 100px;">
+									<div>{{dayAfterTomarrowDateName}}</div>
+									<div style="color:#4bd0e1">{{dayAfterTomarrowDate}} {{dayAfterTomarrowMonthName}}</div>
+								</div>
+								<div layout="row" layout-align="center center"><md-icon style="color:#062963;cursor: pointer;outline: none;" ng-click="last()">keyboard_arrow_left</md-icon></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 
-	<div ng-controller="Ctrl190624">
-	    <form id="formData" name="formData">
-			<div id="_template"  class="template" flex="100" layout-wrap layout="column" >
-	<div flex="100" layout-wrap layout="row" layout-align="center center">
-		<div flex="60" flex-xs="100" layout-padding >
-			<div flex="100" layout-wrap layout="row">
-<md-input-container 
-	 flex="40" flex-xs="100" >
-    <md-icon>search</md-icon>
-    <input ng-model="Form.input"   
-	  md- 
-	 md-  
-	
-	      >	
-	<label>{{'Search'| translate }}</label>
-    	<div class="hint" >{{'' | translate }}</div>
-    
-</md-input-container>
-<!--div ng-init="getDynamicData('__cityList','','0','/base/list/city','country',[],this)"></div-->
+			<div ng-show="flag">
+				<div style="background-color:red;position: relative;">
+					gfd
+				</div>
+			</div>
 
-<div data-ng-init=" __cityList =  " style="display:none"></div>
-<div data-ng-init=" Form.city.id =  " style="display:none"></div>
-
-<md-input-container flex="20" flex-xs="100" md-no-float>
-	<md-icon></md-icon>
-	<md-select 
-		
-		md-on-open="getDynamicData('__cityList','','0','/base/list/city','country',[],this)"
-		ng-model="Form.city.id" placeholder="{{'شهر' | translate}}" >
-		<md-option  ng-repeat="item in __cityList" value="{{item.id}}">
-			{{item.name}}		
-		</md-option>
-	</md-select>
-</md-input-container>
-<md-input-container class="md-block" flex-gt-xs   >
-	<md-radio-group  flex-gt-sm layout-padding layout="row" flex="20"  ng-model="Form.person.gender.id"  >
-		<md-radio-button ng-repeat="item in [{'title':'MALE','id':11},{'title':'FEMALE','id':12}]" class="md-primary" value="{{item.id}}">{{item.title|translate}}</md-radio-button>
-	</md-radio-group>
-</md-input-container>
-<md-button  
-	class="md-primary" 
-	ng-click="makeDesign_293251();" flex="10" flex-xs="100"  >
-    <md-icon class="material-icons">search</md-icon>
-    <span class="md-inline-list-icon-label">{{'جستجو' | translate}}</span>   
-</md-button>
-<!--  -->
-<div flex="100"></div>
-
-<h4   > {{'جستجوي پيشرفته' |translate}} </h4>
-<div  class="removeOutline" ng-click="flag=!flag">
-    <md-icon style="padding:20px" class="setCursor">{{!flag?'keyboard_arrow_down':'keyboard_arrow_up'}}</md-icon>
-</div>
-
-
-<div flex="100"></div>
-<!--div ng-init="getDynamicData('__languageList','','0','/base/list/language','',[],this)"></div-->
-
-<div data-ng-init=" __languageList =  " style="display:none"></div>
-<div data-ng-init=" Form.doctorAccount.primaryLanguage.id =  " style="display:none"></div>
-<div ng-show="flag">
-<md-input-container flex="100" flex-xs="100" md-no-float>
-	<md-icon></md-icon>
-	<md-select 
-		
-		md-on-open="getDynamicData('__languageList','','0','/base/list/language','',[],this)"
-		ng-model="Form.doctorAccount.primaryLanguage.id" placeholder="{{'Language' | translate}}" >
-		<md-option  ng-repeat="item in __languageList" value="{{item.id}}">
-			{{item.name}}		
-		</md-option>
-	</md-select>
-</md-input-container>
-</div>
-<div flex="100"></div>
+		</form>
+	</div>
 <md-content style="background-color: rgba(250, 250, 250, 0);" layout-margin>
 			<div layout="row" layout-align="space-between center" layout-wrap layout-padding >
 				<md-card ng-repeat="find in findData" style="background: #fff;" flex="noshrink" flex-xs="100">
@@ -85,7 +127,9 @@
 						<div layout="column" layout-xs="column">
 							<div layout="row" layout-align="center start">
 								<div class="docPicList">
-									<img ng-hide="find.picture.docId=='' || find.picture.docId==null" ng-src="{{picUrl+find.picture.docId}}" height="100">
+									<img ng-init="design_30255(this)"
+								         ng-src="{{picUrl+picResult}}"
+								         height="100">
 								</div>
 								<div layout="column" layout-align="space-between center">
 									<div class="docNameList">
@@ -129,8 +173,8 @@
 				</md-card>
 			</div>
 		</md-content>
-<div ng-init="design_20217(this)" style="display:none"></div>
-<style><style>.docPicList img {
+<style>
+	.docPicList img {
 			width: 65px;
 			height: 65px;
 			border: solid 1px #80355e;
@@ -210,11 +254,10 @@
         .removeOutline{
             outline:none;
         }
-        }
-</style></style></div>  
+
+		#cityComboBox md-select-value {
+			border: none !important;
+		}
+</style>
+<div ng-init="design_30255(this)" style="display:none"></div></div>
 		</div>
-	</div>
-</div>
-		</form>
-	</div> 
-</div> 

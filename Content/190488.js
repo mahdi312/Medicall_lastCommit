@@ -1,4 +1,4 @@
-app = angular.module("APP").controller("Ctrl190488", ['$rootScope', '$scope', '$http', '$q', '$filter', '$translate', '$mdToast', '$http', function ($rootScope, $scope, $http, $q, $filter, $translate, $mdToast, $http) {
+app = angular.module("APP").controller("Ctrl190488", ['$rootScope', '$scope', '$http', '$q', '$filter', '$translate', '$mdToast', '$http', function ($rootScope, $scope, $http, $q, $filter, $translate, $mdToast) {
 
     // angularJs-Content -> TemplateType
     // For Dialog

@@ -1,83 +1,89 @@
-<div flex="100" oc-lazy-load="{name:'myApp',files:['Content/190491.js?r=570828083','Design/design10110.js?r=570828083','Design/design20209.js?r=570828083','scripts/ngMask.min.js','scripts/md-input.css']}">
+<div flex="100"
+     oc-lazy-load="{name:'myApp',files:['Content/190491.js?r=570828083','Design/design10110.js?r=570828083','Design/design20209.js?r=570828083','scripts/ngMask.min.js','scripts/md-input.css']}">
     <div ng-controller="Design_10110"></div>
     <div ng-controller="Design_20209"></div>
 
     <div ng-controller="Ctrl190491">
-        <form id="formData" name="formData">
-            <div id="_template" class="template" flex="100" layout-wrap layout="column">
-                <div flex="100" layout-wrap layout="row" layout-align="center center">
-                    <div flex="60" flex-xs="100" layout-padding>
-                        <div flex="100" layout-wrap layout="row">
-                            <md-input-container
-                                    flex="50"
-                                    flex-xs="50">
-                                <input ng-model="docInfo[0].doctorAccount.doctorNumber"
-                                       ng-disabled="true">
-                                <label>{{'MEDICALL_COUNCIL_CODE'| translate }}</label>
-                                <div class="hint">{{'' | translate }}</div>
-                            </md-input-container>
-                            <md-input-container
-                                    flex="50"
-                                    flex-xs="50">
-                                <input ng-model="docInfo[0].specialty.name"
-                                       ng-disabled="true">
-                                <label>{{'SPECIALITY'| translate }}</label>
-                                <div class="hint">{{'' | translate }}</div>
-                            </md-input-container>
-                            <md-input-container
-                                    flex="50"
-                                    flex-xs="50">
-                                <input ng-model="docInfo[0].doctorAccount.person.firstName+' ,'+docInfo[0].doctorAccount.person.lastName"
-                                       ng-disabled="true">
-                                <label>{{'FIRST_NAME_AND_LAST_NAME'| translate }}</label>
-                                <div class="hint">{{'' | translate }}</div>
-                            </md-input-container>
-                            <md-input-container
-                                    flex="50"
-                                    flex-xs="50">
-                                <md-icon>date</md-icon>
-                                <input ng-model="setStandardDate(docInfo[0].doctorAccount.person.birthDate)"
-                                       ng-disabled="true">
-                                <label>{{'BIRTH_DATE'| translate }}</label>
-                                <div class="hint">{{'' | translate }}</div>
-                            </md-input-container>
-                            <md-input-container
-                                    flex="100"
-                                    flex-xs="100">
-                                <input ng-model="docInfo[0].address.postalCode" ng-pattern="/^[13-9]*$/"
-                                       name="PostalCode" ng-disabled="true">
-                                <label>{{'WORKPLACE_POSTAL_CODE'| translate }}</label>
-                                <div class="hint">{{'' | translate }}</div>
-                            </md-input-container>
-                            <md-input-container
-                                    flex="100"
-                                    flex-xs="100">
-                                <input ng-model="docInfo[0].address.mandatoryAddress + ' ' + docInfo[0].address.optionalAddress"
-                                       name="Address"
-                                       ng-disabled="true">
-                                <label>{{'WORKPLACE_ADDRESS'| translate }}</label>
-                                <div class="hint">{{'' | translate }}</div>
-                            </md-input-container>
-                            <md-input-container
-                                    flex="100">
-                                <input ng-model="docInfo[0].address.telephone + ' , ' +docInfo[0].address.fax"
-                                       ng-disabled="true">
-                                <label>{{'GENERAL_WORK_PHONE_AND_FAX'| translate }}</label>
-                                <div class="hint">{{'' | translate }}</div>
-                            </md-input-container>
-                            <md-button
-                                    class="md-list-item-content md-primary"
-                                    ng-click="makeDesign_272417();" flex="100" flex-xs="100">
-                                <md-icon class="material-icons">save</md-icon>
-                                <span class="md-inline-list-icon-label">{{'APPROVE' | translate}}</span>
-                            </md-button>
-                            <div ng-init="design_20209(this)" style="display:none"></div>
-                            <div ng-init="getInitData('docInfo','','0','workplace/list/doctor/'+docId+'',{},this)"
-                                 style="display:none"></div>
-                        </div>
+        <form id="formData" name="formData" layout-padding style="width: 500px">
+            <div layout="column" style="margin :0 auto">
+                <div layout="row" layout-align="center center">
+                    <div style="text-align: center ; font-size: small ; padding: 0px; padding-bottom: 30px">
+                        <span style="color: #00C6D7;">{{'DEAR_USER' | translate}}</span>
+                        <span>{{'YOUR_INFORMATION_HAS_BEEN_SAVED_IN_THE_MEDICALL_COMPREHENSIVE_SYSTEM' | translate}}</span>
                     </div>
                 </div>
-            </div>
+                <div layout="column" layout-align="center stretch">
+                    <div layout="row" layout-align="center stretch">
+                    <md-input-container class="margin-padding-zero"
+                            flex="50">
+                        <input ng-model="docInfo[0].doctorAccount.doctorNumber"
+                               ng-disabled="true">
+                        <label>{{'MEDICALL_COUNCIL_CODE'| translate }}</label>
+                        <div class="hint">{{'' | translate }}</div>
+                    </md-input-container>
+                    <md-input-container class="margin-padding-zero"
+                            flex="50">
+                        <input ng-model="docInfo[0].specialty.name"
+                               ng-disabled="true">
+                        <label>{{'SPECIALITY'| translate }}</label>
+                        <div class="hint">{{'' | translate }}</div>
+                    </md-input-container>
+                    </div>
+                    <div layout="row" layout-align="center stretch">
+                    <md-input-container class="margin-padding-zero"
+                            flex="50">
+                        <input ng-model="docInfo[0].doctorAccount.person.firstName+' ,'+docInfo[0].doctorAccount.person.lastName"
+                               ng-disabled="true">
+                        <label>{{'FIRST_NAME_AND_LAST_NAME'| translate }}</label>
+                        <div class="hint">{{'' | translate }}</div>
+                    </md-input-container>
+                    <md-input-container class="margin-padding-zero"
+                            flex="50">
+                        <md-icon>date</md-icon>
+                        <input ng-model="setStandardDate(docInfo[0].doctorAccount.person.birthDate)"
+                               ng-disabled="true">
+                        <label>{{'BIRTH_DATE'| translate }}</label>
+                        <div class="hint">{{'' | translate }}</div>
+                    </md-input-container>
+                    </div>
+                    <div layout="row" layout-align="center stretch">
+                    <md-input-container class="margin-padding-zero"
+                            flex="50">
+                        <input ng-model="docInfo[0].address.postalCode" ng-pattern="/^[13-9]*$/"
+                               name="PostalCode" ng-disabled="true">
+                        <label>{{'WORKPLACE_POSTAL_CODE'| translate }}</label>
+                        <div class="hint">{{'' | translate }}</div>
+                    </md-input-container>
+                    <md-input-container class="margin-padding-zero"
+                                        flex="50">
+                        <input ng-model="docInfo[0].address.telephone + ' , ' +docInfo[0].address.fax"
+                               ng-disabled="true">
+                        <label>{{'GENERAL_WORK_PHONE_AND_FAX'| translate }}</label>
+                        <div class="hint">{{'' | translate }}</div>
+                    </md-input-container>
+                    </div>
+                    <div layout="row" layout-align="center stretch">
+                    <md-input-container class="margin-padding-zero"
+                            flex="100">
+                        <input ng-model="docInfo[0].address.mandatoryAddress + ' ' + docInfo[0].address.optionalAddress"
+                               name="Address"
+                               ng-disabled="true">
+                        <label>{{'WORKPLACE_ADDRESS'| translate }}</label>
+                        <div class="hint">{{'' | translate }}</div>
+                    </md-input-container>
+                    </div>
+                </div>
+                    <md-button
+                            class="md-raised md-primary"
+                            ng-click="makeDesign_272417();" flex="100" flex-xs="100"
+                            style="background-color: #052963; border-radius: 4px">
+                        <span class="md-inline-list-icon-label">{{'GO_TO_YOUR_PHYSICIAN_DASHBOARD' | translate}}</span>
+                    </md-button>
+                    <div ng-init="design_20209(this)" style="display:none"></div>
+                    <div ng-init="getInitData('docInfo','','0','workplace/list/doctor/'+docId+'',{},this)"
+                         style="display:none">
+                    </div>
+                </div>
         </form>
     </div>
 </div> 

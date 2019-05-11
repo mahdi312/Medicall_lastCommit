@@ -82,6 +82,7 @@
 	"SIGN_OUT": "خروج",
 	"GO_TO_YOUR_PATIENT_DASHBOARD": "به میزکار بیمار خود بروید",
 	"GO_TO_YOUR_PERSONAL_DASHBOARD": "به میزکار شخصی خود بروید",
+	"GO_TO_YOUR_PHYSICIAN_DASHBOARD": "به میزکار پزشکی خود بروید",
 	"ARE_YOU_A_PHYSICIAN?": "آیا شما پزشک هستید؟",
 	"ARE_YOU_A_SECRETARY?": "آیا شما منشی هستید؟",
 	"CONGRATULATION_!": "تبریک!",
@@ -151,12 +152,18 @@
 	"WORK_ADDRESS":"آدرس محل کار",
 	"MANDATORY_ADDRESS_IS_REQUIRED": "وارد کردن آدرس اصلی محل کار ضروری است",
 	"MANDATORY_ADDRESS_MUST_BE_LESS_THAN_100_CHARS": "آدرس اصلی باید کمتر از 100 کاراکتر باشد",
+	"MANDATORY_ADDRESS_MUST_BE_MORE_THAN_15_CHARS": "آدرس اصلی باید بیشتر از 15 کاراکتر باشد",
 	"SUPPLEMENTARY_ADDRESS_IS_REQUIRED": "وارد کردن آدرس تکمیلی محل کار ضروری است",
 	"SUPPLEMENTARY_ADDRESS_MUST_BE_LESS_THAN_100_CHARS": "آدرس اصلی باید کمتر از 100 کاراکتر باشد",
 	"COUNTRY": "کشور",
 	"CITY": "شهر",
 	"PRE_CODE_HINT": "ایران",
 	"PRE_CODE": "پیش شماره",
+
+	"NO_DIFFRENCE":"مهم نیست",
+	"TODAY":"امروز",
+	"THREE_DAYS_LATER":"3روز آینده",
+	"ONE_WEEK_LATER":"یک هفته آینده",
 
 	"APPROVE": "تایید",
 	"VERIFY": "تایید",
@@ -186,6 +193,8 @@
 	"PHYSICIAN_COUNCIL_CODE":"شماره نظام پزشکی",
 	"PLEASE_ENTER_YOUR_PHYSICIAN_COUNCIL_CODE":"لطفا شماره نظام پزشکی خود را وارد نمایید",
 	"PLEASE_ENTER_YOUR_ACCOUNT_INFORMATION":"لطفا اطلاعات حساب کاربری خود را وارد نمایید",
+	"PLEASE_ENTER_YOUR_WORKPLACE_INFORMATION":"لطفا اطلاعات محل کار خود را وارد نمایید",
+	"PLEASE_CHOOSE_YOUR_SPECIALTY":"لطفا تخصص خود را انتخاب کنید",
 	"ACCOUNT_INFO":"اطلاعات حساب کاربری",
 	"SET_PASSWORD":"تنظیم کلمه عبور",
 	"WORKPLACE_INFO":"اطلاعات محل کار",
@@ -193,6 +202,8 @@
 
 
 	"CHANGE_ACCOUNT":"شما می توانید تنظیمات حساب خود را در اینجا تغییر دهید.",
+	"YOUR_INFORMATION_HAS_BEEN_SAVED_IN_THE_MEDICALL_COMPREHENSIVE_SYSTEM":"اطلاعات شما در سامانه جامع مدیکال ذخیره گردید",
+
 	"MY_PROFILE":"پروفایل من",
 	"UPLOADE_PROFILE":"آپلود جدید پروفایل",
 	"EDIT_BIO":"ویرایش بیوگرافی",
