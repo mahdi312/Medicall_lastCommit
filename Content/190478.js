@@ -21,10 +21,15 @@ app = angular.module("APP").controller("Ctrl190478", ['$rootScope','$scope', '$h
 	
 $scope.makeDesign_272343 = function(param){ 
 	 $rootScope.design_10092($scope,param); 
-} 
- 
+}
 
- 
+
+    $scope.submitInpEnt = function ($event) {
+        var keyCode = $event.which || $event.keyCode;
+        if (keyCode === 13) {
+            $scope.makeDesign_272343();
+        }
+    };
  
  
 }]);

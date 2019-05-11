@@ -18,6 +18,7 @@
                 <md-input-container>
                     <md-icon style="font-size: 35px;color: #052963;">fingerprint</md-icon>
                     <input ng-model="Form.nationalCode"
+                           ng-keypress="formData.$invalid ? '':submitInpEnt($event)"
                            minlength="10"
                            md-minlength="10"
                            maxlength="10"
@@ -49,10 +50,11 @@
                 <md-button
                         class="md-raised md-primary"
                         style="background-color: #052963; border-radius: 4px"
-                        ng-click="(formData.nationalCode.$valid)?makeDesign_272343():''">
+                        ng-disabled="!formData.$valid"
+                        ng-click="makeDesign_272343()">
                     <span class="md-inline-list-icon-label">{{'SIGN_IN_SIGN_UP' | translate}}</span>
                 </md-button>
-                <!--  --></div>
+            </div>
         </form>
     </div>
 </div>
