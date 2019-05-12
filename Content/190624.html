@@ -112,85 +112,121 @@
 				</div>
 			</div>
 
-			<div ng-show="flag">
+			<!--<div ng-show="flag">
 				<div style="background-color:red;position: relative;">
 					gfd
 				</div>
-			</div>
+			</div>-->
 
 		</form>
 	</div>
-<md-content style="background-color: rgba(250, 250, 250, 0);" layout-margin>
-			<div layout="row" layout-align="space-between center" layout-wrap layout-padding >
-				<md-card ng-repeat="find in findData" style="background: #fff;" flex="noshrink" flex-xs="100">
-					<div layout="column">
-						<div layout="column" layout-xs="column">
-							<div layout="row" layout-align="center start">
-								<div class="docPicList">
-									<img ng-init="design_30255(this)"
-								         ng-src="{{picUrl+picResult}}"
-								         height="100">
-								</div>
-								<div layout="column" layout-align="space-between center">
-									<div class="docNameList">
-										{{find.firstName}} {{find.lastName}}
-									</div>
-									<div class="docExpertiseList">
-										{{find.specialtyName}}
-									</div>
-								</div>
+	<div layout="row" layout-align="center center">
+		<div flex="90">
+			<md-content style="background: #f0f8ff00;" flex="100" layout="row" layout-align="center center">
+				<md-card  ng-repeat="find in findData" flex="100" flex-xs="100" style="background: rgb(246, 244, 255)">
+						<div layout="row">
+							<div style="background-image: url('../images/Woman.jpg');"  class="docPicList" layout="row" layout-align="center center">
+								<img ng-init="design_30255(this)"
+									 ng-src="{{picUrl+picResult}}"
+									 height="100">
 							</div>
-							<div layout="row" layout-align="space-between center" layout-xs="column">
-								<div layout="column">
-									<div layout="row" class="docTellList">
-										<div class="docTellOffice">{{ 'TELL' }}</div><div>{{find.office_tel}},{{find.telephone}}</div>
-									</div>
-									<div layout="row" class="docTellList">
-										<div class="docTellOffice">{{ 'FAX' }}</div><div>{{find.office_fax}},{{find.fax}}</div>
-									</div>
-								</div>										
-								<div class="docBtnList">
-									<md-button class="md-button" ng-click="#">{{ 'APPOINTMENT' }}</md-button>
+							<div layout="column" layout-align="start start">
+								<div class="docNameList">
+									{{find.firstName}} {{find.lastName}}
+								</div>
+								<div class="docExpertiseList">
+									{{find.specialtyName}}
+								</div>
+								<div layout="row">									
+									<star-rating class="star-rating" 
+										 rating-value="rating" 
+										 data-max="5" on-rating-selected="rateFunction(rating)" 
+										 ng-init="rating = 1">
+									</star-rating>									
+								</div>
+								<div layout="row" style="font-size: 15px">
+									<div class="docAddrTitle">{{ 'ADDRESS' | translate }}:</div>
+									<div class="docAddr">{{find.address_name}} ({{find.addressType}}) {{find.cityName}} - {{find.mandatory_address}} {{find.optional_address}}</div>
+								</div>
+								<div layout="row" class="docTellList" style="font-size: 15px">
+									<div class="docTellOffice">{{ 'TELL' | translate }}:</div><div>{{find.office_tel}},{{find.telephone}}</div>
 								</div>
 							</div>
 						</div>
-						<hr class="borderStyleList">
-						<div layout="column" layout-xs="column" layout-align="space-between center" layout-align-xs="start start">
-							<div layout="row">
-								<div class="docAddrTitle">{{ 'ADDRESS' }}:</div>
-								<div class="docAddr">{{find.address_name}} ({{find.addressType}}) {{find.cityName}} - {{find.mandatory_address}} {{find.optional_address}}</div>
+					</md-card>
+			</md-content>
+		</div>
+	</div>
+<!--<md-content style="background-color: rgba(250, 250, 250, 0);" layout-margin>
+	<div layout="row" layout-align="space-between center" layout-wrap layout-padding >
+		<md-card ng-repeat="find in findData" style="background: #fff;" flex="noshrink" flex-xs="100">
+			<div layout="column">
+				<div layout="column" layout-xs="column">
+					<div layout="row" layout-align="center start">
+						<div class="docPicList">
+							<img ng-init="design_30255(this)"
+								 ng-src="{{picUrl+picResult}}"
+								 height="100">
+						</div>
+						<div layout="column" layout-align="space-between center">
+							<div class="docNameList">
+								{{find.firstName}} {{find.lastName}}
 							</div>
-							<div layout="row">									
-								<div>{{ 'RATING'  }}: </div>
-								<star-rating class="star-rating" 
-									 rating-value="rating" 
-									 data-max="5" on-rating-selected="rateFunction(rating)" 
-									 ng-init="rating = 1">
-								</star-rating>									
+							<div class="docExpertiseList">
+								{{find.specialtyName}}
 							</div>
 						</div>
 					</div>
-				</md-card>
+					<div layout="row" layout-align="space-between center" layout-xs="column">
+						<div layout="column">
+							<div layout="row" class="docTellList">
+								<div class="docTellOffice">{{ 'TELL' }}</div><div>{{find.office_tel}},{{find.telephone}}</div>
+							</div>
+							<div layout="row" class="docTellList">
+								<div class="docTellOffice">{{ 'FAX' }}</div><div>{{find.office_fax}},{{find.fax}}</div>
+							</div>
+						</div>										
+						<div class="docBtnList">
+							<md-button class="md-button" ng-click="#">{{ 'APPOINTMENT' }}</md-button>
+						</div>
+					</div>
+				</div>
+				<hr class="borderStyleList">
+				<div layout="column" layout-xs="column" layout-align="space-between center" layout-align-xs="start start">
+					<div layout="row">
+						<div class="docAddrTitle">{{ 'ADDRESS' }}:</div>
+						<div class="docAddr">{{find.address_name}} ({{find.addressType}}) {{find.cityName}} - {{find.mandatory_address}} {{find.optional_address}}</div>
+					</div>
+					<div layout="row">									
+						<div>{{ 'RATING'  }}: </div>
+						<star-rating class="star-rating" 
+							 rating-value="rating" 
+							 data-max="5" on-rating-selected="rateFunction(rating)" 
+							 ng-init="rating = 1">
+						</star-rating>									
+					</div>
+				</div>
 			</div>
-		</md-content>
+		</md-card>
+	</div>
+</md-content>-->
 <style>
 	.docPicList img {
-			width: 65px;
-			height: 65px;
-			border: solid 1px #80355e;
-			border-radius: 60px;
+			width: 150px;
+			height: 173px;
+			border-radius: 8px;
 			padding: 2px;
-			margin: 0 15px 0 0;
+			
 		}
 		.docNameList {
-			font-size: 17px;
+			margin-right: 5px;
 			font-weight: bold;
-			color: #7F345B;
 			margin: 10px 0;
 		}
 		.docExpertiseList {
-			font-size: 14px;
-			color: #777;			
+			font-size: 17px;
+			color: #0075bb;
+			margin-right: 5px;			
 		}
 		.docBtnList button {
 			background: #7F345B !important;
@@ -229,7 +265,8 @@
 		}
 
 		.rating .filled {
-		  color: #FFD700;
+		   color: #c9beff;
+		   outline:none;
 		}
 		hr.borderStyleList {
 			border: 0;

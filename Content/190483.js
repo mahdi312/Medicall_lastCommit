@@ -33,6 +33,7 @@ app = angular.module("APP").controller("Ctrl190483", ['$rootScope', '$scope', '$
 
     $scope.agreement = false;
 
+    $scope.flag = false;
 
 }]);
 app.requires.push('ngMaterial', 'ngStorage', 'oc.lazyLoad', 'pascalprecht.translate', 'ngMessages', 'ngMask');

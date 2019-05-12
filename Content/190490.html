@@ -38,20 +38,22 @@
                         layout="row"
                         layout-align="center stretch"
                         style="margin-top: -8px">
-                    <md-checkbox
-                            style="font-size: 11px ; margin-top: 15px"
-                            ng-model="agreement"
-                            ng-disabled="!(formData.specialty.$valid)">
-                        {{'ALL_THE_ABOVE_INFORMATION_IS_UNDER_MY_AGREEMENT'|translate}}
-                    </md-checkbox>
                     <md-button
-                            class="md-list-item-content md-primary"
-                            ng-click="(formData.specialty.$valid)?makeDesign_272408():'';"
+                            class="md-raised md-primary"
+                            style="background-color: #052963;border-radius: 30px;color: #fafafa;"
+                            ng-click="(formData.$valid)?makeDesign_272408():'';"
                             ng-disabled="!agreement">
                         <span class="md-inline-list-icon-label">{{'CONFIRM' | translate}}</span>
                     </md-button>
                     <md-button
-                            class="md-list-item-content md-primary"
+                            class="md-raised md-primary"
+                            style="background-color: #052963;border-radius: 30px;color: #fafafa;"
+                            ng-click="makeDesign_272409();">
+                        <span class="md-inline-list-icon-label">{{'BACK' | translate}}</span>
+                    </md-button>
+                    <md-button
+                            class="md-raised md-primary"
+                            style="background-color: #052963;border-radius: 30px;color: #fafafa;"
                             ng-click="makeDesign_293028();">
                         <span class="md-inline-list-icon-label">{{'CANCEL' | translate}}</span>
                     </md-button>

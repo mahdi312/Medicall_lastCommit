@@ -36,7 +36,6 @@ app = angular.module("APP").controller("Ctrl190488", ['$rootScope', '$scope', '$
     }
 
 
-    $scope.agreement = false;
 
 
     $rootScope.setStandardDate = function (impDate) {

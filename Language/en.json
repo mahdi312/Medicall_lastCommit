@@ -66,6 +66,8 @@
 	"PASSWORD_IS_NOT_MATCH_WITH_CONFIRM_PASSWORD":"Password Is Not Match With Confirm Password",
 	"CONFIRM_PASSWORD_IS_NOT_MATCH_WITH_PASSWORD":"Confirm Password Is Not Match With Password",
 	"PLEASE_ENTER_YOUR_PASSWORD_OF_PERSONAL_DASHBOARD":"Please Enter Your Password Of Personal Dashboard",
+	"PLEASE_ENTER_YOUR_PASSWORD_OF_PHYSICIAN_DASHBOARD":"Please Enter Your Password Of Physician Dashboard",
+	"PLEASE_ENTER_YOUR_PASSWORD_OF_SECRETARY_DASHBOARD":"Please Enter Your Password Of Secretary Dashboard",
 
 	"NATIONAL_CODE": "National/Faragir Code",
 	"MOBILE_NUMBER": "Mobile Number",
@@ -168,7 +170,7 @@
 	"SAVE":"Save",
 	"EDIT":"edit",
 	"REMOVE":"remove",
-	"CANCEL":"Cancel",
+	"ABORT":"Abort",
 	"NEW":"New",
 	"SETTING": "Setting",
 	"NEXT": "Next",

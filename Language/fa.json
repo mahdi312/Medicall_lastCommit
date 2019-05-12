@@ -67,6 +67,8 @@
 	"PASSWORD_IS_NOT_MATCH_WITH_CONFIRM_PASSWORD":"کلمه عبور و تایید کلمه عبور یکسان نیستند",
 	"CONFIRM_PASSWORD_IS_NOT_MATCH_WITH_PASSWORD":"تایید کلمه عبور و کلمه عبور یکسان نیستند",
 	"PLEASE_ENTER_YOUR_PASSWORD_OF_PERSONAL_DASHBOARD":"کلمه عبور میزکار شخصی خود را وارد نمایید",
+	"PLEASE_ENTER_YOUR_PASSWORD_OF_PHYSICIAN_DASHBOARD":"کلمه عبور میزکار پزشک خود را وارد نمایید",
+	"PLEASE_ENTER_YOUR_PASSWORD_OF_SECRETARY_DASHBOARD":"کلمه عبور میزکار منشی خود را وارد نمایید",
 
 	"NATIONAL_CODE": "کد ملی",
 	"MOBILE_NUMBER": "شماره همراه",
@@ -76,6 +78,8 @@
 	"GENDER": "جنسیت",
 	"FEMALE": "زن",
 	"MALE": "مرد",
+
+	"TELL":"تلفن",
 
 	"SIGN_IN": "ورود",
 	"SIGN_IN_SIGN_UP": "ثبت نام / ورود",
@@ -168,15 +172,15 @@
 
 	"APPROVE": "تایید",
 	"VERIFY": "تایید",
-	"CONFIRM": "موافقت",
 	"BACK": "بازگشت",
 	"NEXT": "بعدی",
 	"IDENTIFY": "شناسایی",
 
+	"CONFIRM": "تایید",
 	"SAVE":"ذخیره",
 	"EDIT":"ویرایش",
 	"REMOVE":"حذف",
-	"CANCEL":"لغو",
+	"ABORT":"لغو",
 	"NEW":"جدید",
 
 	"PHYSICIAN_INFO": "اطلاعات پزشک",

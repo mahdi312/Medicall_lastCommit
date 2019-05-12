@@ -30,9 +30,7 @@ $scope.makeDesign_272400 = function(param){
 $scope.makeDesign_293027 = function(param){ 
 	 $rootScope.design_10123($scope,param); 
 } 
- 
 
- 
  
 }]);
 app.requires.push('ngMaterial','ngStorage','oc.lazyLoad','pascalprecht.translate','ngMessages','angular-md5');

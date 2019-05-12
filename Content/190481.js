@@ -26,7 +26,19 @@ $scope.makeDesign_272456 = function(param){
 $scope.makeDesign_272372 = function(param){ 
 	 $rootScope.design_10117($scope,param); 
 } 
- 
+
+$scope.inputType = "password";
+$scope.visibility = 'visibility_off';
+$scope.changeInputType = function () {
+	if($scope.inputType=="password"){
+        $scope.inputType="text";
+        $scope.visibility = 'visibility_on';
+	}else{
+        $scope.inputType="password";
+        $scope.visibility = 'visibility_off';
+
+    }
+}
 
  
  

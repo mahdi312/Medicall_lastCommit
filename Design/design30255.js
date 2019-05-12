@@ -6,7 +6,7 @@ $rootScope.design_30255 = function($scope,param,$event){
 	$scope.obj={};
 	$scope.obj.id=$scope.personId;
 	
-	url= 'http://172.16.201.42:7001/ehealth-ws-1.2/rest/api/v1account/patient/image';
+	url= 'http://172.16.201.42:7001/ehealth-ws-1.2/rest/api/v1/account/patient/image';
 	$scope.callBack_30255 = function(data){
 		$scope.$eval("imageResult=" + JSON.stringify(data)) 
 		$scope.picUrl="data:image/png;base64,";

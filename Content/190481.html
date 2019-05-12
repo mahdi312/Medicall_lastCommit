@@ -24,14 +24,14 @@
                 <md-input-container>
                     <md-icon>vpn_key</md-icon>
                     <input ng-model="Form.password__"
-                           type="password"
+                           type="{{inputType}}"
                            md-five="true"
                            minlength="6"
                            md-minlength="6"
                            name="password"
                            required
                            style="width: 386px">
-                    <md-icon class="material-icons">visibility_off</md-icon>
+                    <md-icon class="material-icons" ng-click="changeInputType()">{{visibility}}</md-icon>
                     <label>{{'PASSWORD'| translate }}</label>
                     <div class="hint" ng-show="!formData.password.$touched || formData.password.$valid">
                         {{'PASSWORD_HINT' | translate }}
@@ -47,7 +47,7 @@
                 </md-input-container>
                 <md-button
                         class="md-raised md-primary"
-                        ng-click="(formData.password.$valid)?makeDesign_272372():'';">
+                        ng-click="(formData.$valid)?makeDesign_272372():'';">
                     <span class="md-inline-list-icon-label">{{'SIGN_IN' | translate}}</span>
                 </md-button>
             </div>

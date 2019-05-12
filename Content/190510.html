@@ -27,12 +27,12 @@
 		value="{{image_source['Image1'].progress}}"></md-progress-linear>
 	</div>
 	<div layout-padding style="width:200px;position:relative">
-		<input ng-model="Form.Image1" type="file" accept="image/*" 
+		<input ng-model="Form.Image1" type="file" accept="image/*"
 		baseUrlId="0"
 		url="account/person/image/save"
 		style="color:transparent"
 		imageDataVar="imageData"
-		param="{'id':'+DocInfo.person.id+'}"
+		param="{{DocInfo.person}}"
 		onchange="angular.element(this).scope().uploadedFile(this,'Image1')" >
 		<md-icon ng-show="image_source['Image1'].visible" style="position:absolute;top:10px;left:115px;color:green;">check</md-icon>
 	</div>

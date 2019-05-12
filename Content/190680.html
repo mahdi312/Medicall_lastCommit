@@ -34,12 +34,14 @@
 		imageDataVar="imageData"
 		param="{{PatientInfo}}"
 		onchange="angular.element(this).scope().uploadedFile(this,'Image1')" >
-		<md-icon ng-show="image_source['Image1'].visible" style="position:absolute;top:10px;left:115px;color:green;">check</md-icon>
+		<md-icon ng-show="image_source['Image1'].visible"
+				 style="position:absolute;top:10px;left:115px;color:green;">check</md-icon>
 	</div>
 </div>
 
 
 <div ng-init="design_10135(this)" style="display:none"></div>
+
 <md-button  
 	class="md-list-item-content md-primary" 
 	ng-click="makeDesign_293450();" flex="100" flex-xs="100"  >
