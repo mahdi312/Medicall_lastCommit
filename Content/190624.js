@@ -1,5 +1,4 @@
 app = angular.module("APP").controller("Ctrl190624", ['$rootScope','$scope', '$http','$q','$filter','$translate','$mdToast','$http', function ($rootScope,$scope, $http,$q, $filter,$translate,$mdToast,$http){
-	
 	$scope.options = [
         {
           name: 'میزان رضایت بیماران',
@@ -7,6 +6,7 @@ app = angular.module("APP").controller("Ctrl190624", ['$rootScope','$scope', '$h
         }
 		
     ];
+	
 	$scope.type = $scope.options[0].value;
     $scope.selectedOption = $scope.options[0];
 	$scope.convertTodayToPersianFilter=function(){
@@ -188,3 +188,15 @@ app.directive('starRating',
 		};
 	}
 );
+app.directive('init', function () {
+    return {
+        priority: 0,
+        compile: function () {
+            return {
+                pre: function (scope, element, attrs) {
+                    scope.$eval(attrs.init);
+                }
+            };
+        }
+    };
+});

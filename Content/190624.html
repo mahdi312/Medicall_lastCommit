@@ -2,16 +2,16 @@
 <div ng-controller="Design_20215"></div>
 <div ng-controller="Design_30255"></div>
 <div ng-controller="Ctrl190624">
-	<div style="margin:0;padding:0">
-		<form id="formData" name="formData" style="margin:0;padding:0" layout-padding >
-			<div style="background-color:#f6f4ff" layout="row" layout-align="center center" layout-wrap>
+	<div class="marginAndPaddingZero">
+		<form id="formData" name="formData" class="marginAndPaddingZero" layout-padding >
+			<div class="findNavbar" layout="row" layout-align="center center" layout-wrap>
 				<div flex="75" layout="row">
-				<div flex="100" layout="row" style="background-color: white;border-radius: 20px;">
+				<div flex="100" layout="row" class="searchInputIcon">
 					<div layout="row" layout-align="center center">
 						<md-icon style="color: #052963;margin: 5px;">search</md-icon>
 					</div>
 					<div flex="100">
-						<input placeholder="جستجوی سریع" style="width: 100%;height: 35px;border: none;border-radius: 18px;outline: none;font-size: 15px;" ng-model="Form.input">
+						<input placeholder="جستجوی سریع" class="findInput" ng-model="Form.input">
 					</div>
 				</div>
 				</div>
@@ -27,7 +27,7 @@
 					<div flex="100" layout="row" layout-align="space-between center">
 						<div flex="20" style="border: 1px solid; border-radius: 22px;padding: 5px;font-size: 15px;background-color:white" layout="row">
 							<md-select id="cityComboBox" flex="100"
-									style="padding:0;margin:0"
+									style="padding:0;margin:0;color: black;"
 									md-on-open="getDynamicData('__cityList','','0','/base/list/city','country',[],this)"
 									ng-model="Form.city.id" placeholder="{{'شهر' | translate}}">
 								<md-option ng-repeat="item in __cityList" value="{{item.id}}">
@@ -77,7 +77,7 @@
 					</md-button>
 				</div>
 			</div>
-			<div  layout="row" layout-align="center center">
+			<div  style="margin:0;padding:0;margin-top: 10px;" layout="row" layout-align="center center">
 				<div flex="90">
 					<div flex="100" style="color:black;background-color:white" layout="row" layout-align="space-between center">
 						<div style="border: 1px solid; border-radius: 22px;padding: 5px;font-size: 15px;" layout="row">
@@ -91,17 +91,17 @@
 							</select>
 						</div>
 						<div style="color:black;font-size: 15px;">
-							<div layout="row" layout-align="center center" layout-padding ng-init="setLocal('fa')">
+							<div style="margin:0;padding:0" layout="row" layout-align="center center" layout-padding ng-init="setLocal('fa')">
 								<div layout="row" layout-align="center center"><md-icon style="color:#062963;cursor: pointer;outline: none;" ng-click="next()">keyboard_arrow_right</md-icon></div>
-								<div layout="column" layout-align="center center" style="background: #dff7f9;width: 100px;">
+								<div layout="column" layout-align="center center" style="background: #dff7f9;width: 131px;height: 90px">
 									<div>{{todayDateName}}</div><!-- -->
 									<div style="color:#4bd0e1">{{todayDate}} {{todayMonthName}}</div>
 								</div>
-								<div layout="column" layout-align="center center" style="background-color:#c9f1f3;width: 100px;">
+								<div layout="column" layout-align="center center" style="background-color:#c9f1f3;width: 131px;height: 90px">
 									<div>{{tomarrowDateName}}</div>
 									<div style="color:#4bd0e1">{{tomarrowDate}} {{tomarrowMonthName}}</div>
 								</div>
-								<div layout="column" layout-align="center center" style="background: #dff7f9;width: 100px;">
+								<div layout="column" layout-align="center center" style="background: #dff7f9;width: 131px;height: 90px">
 									<div>{{dayAfterTomarrowDateName}}</div>
 									<div style="color:#4bd0e1">{{dayAfterTomarrowDate}} {{dayAfterTomarrowMonthName}}</div>
 								</div>
@@ -122,106 +122,81 @@
 	</div>
 	<div layout="row" layout-align="center center">
 		<div flex="90">
-			<md-content style="background: #f0f8ff00;" flex="100" layout="row" layout-align="center center">
-				<md-card  ng-repeat="find in findData" flex="100" flex-xs="100" style="background: rgb(246, 244, 255)">
-						<div layout="row">
-							<div style="background-image: url('../images/Woman.jpg');"  class="docPicList" layout="row" layout-align="center center">
-								<img ng-init="design_30255(this)"
-									 ng-src="{{picUrl+picResult}}"
-									 height="100">
+			<md-content style="background: #f0f8ff00;" flex="100">
+				<md-card class="searchRusultHover" ng-repeat="find in findData" flex="100" flex-xs="100" >
+						<div flex="100" layout="row" layout-align="space-between center">
+							<div layout="row">
+								<div style="margin-right: 6px;" ng-class="{'menImgClass': find.gender == 'مرد','womanImgClass': find.gender == 'زن'}" class="docPicList" layout="row" layout-align="center center">
+									<img init="design_30255(this,find.person_id)"
+										 ng-src="{{picUrl+picResult}}"
+									/>
+								</div>
+								<div style="margin-right: 5px;" layout="column" layout-align="start start">
+									<div class="docNameList">
+										{{find.firstName}} {{find.lastName}}
+									</div>
+									<div class="docExpertiseList">
+										{{find.specialtyName}}
+									</div>
+									<div layout="row">									
+										<star-rating class="star-rating" 
+											 rating-value="rating" 
+											 data-max="5" on-rating-selected="rateFunction(rating)" 
+											 ng-init="rating = 1">
+										</star-rating>									
+									</div>
+									<div layout="row" style="font-size: 15px">
+										<div class="docAddrTitle">{{ 'ADDRESS' | translate }}:</div>
+										<div class="docAddr">{{find.address_name}} ({{find.addressType}}) {{find.cityName}} - {{find.mandatory_address}} {{find.optional_address}}</div>
+									</div>
+									<div layout="row" class="docTellList" style="font-size: 15px">
+										<div class="docTellOffice">{{ 'TELL' | translate }}:</div><div>{{find.office_tel}},{{find.telephone}}</div>
+									</div>
+								</div>
 							</div>
-							<div layout="column" layout-align="start start">
-								<div class="docNameList">
-									{{find.firstName}} {{find.lastName}}
-								</div>
-								<div class="docExpertiseList">
-									{{find.specialtyName}}
-								</div>
-								<div layout="row">									
-									<star-rating class="star-rating" 
-										 rating-value="rating" 
-										 data-max="5" on-rating-selected="rateFunction(rating)" 
-										 ng-init="rating = 1">
-									</star-rating>									
-								</div>
-								<div layout="row" style="font-size: 15px">
-									<div class="docAddrTitle">{{ 'ADDRESS' | translate }}:</div>
-									<div class="docAddr">{{find.address_name}} ({{find.addressType}}) {{find.cityName}} - {{find.mandatory_address}} {{find.optional_address}}</div>
-								</div>
-								<div layout="row" class="docTellList" style="font-size: 15px">
-									<div class="docTellOffice">{{ 'TELL' | translate }}:</div><div>{{find.office_tel}},{{find.telephone}}</div>
-								</div>
+							
+							<div layout="row" style="margin-left: 30px;">
+								<img src="../images/books.png" />
 							</div>
 						</div>
+						
 					</md-card>
 			</md-content>
 		</div>
 	</div>
-<!--<md-content style="background-color: rgba(250, 250, 250, 0);" layout-margin>
-	<div layout="row" layout-align="space-between center" layout-wrap layout-padding >
-		<md-card ng-repeat="find in findData" style="background: #fff;" flex="noshrink" flex-xs="100">
-			<div layout="column">
-				<div layout="column" layout-xs="column">
-					<div layout="row" layout-align="center start">
-						<div class="docPicList">
-							<img ng-init="design_30255(this)"
-								 ng-src="{{picUrl+picResult}}"
-								 height="100">
-						</div>
-						<div layout="column" layout-align="space-between center">
-							<div class="docNameList">
-								{{find.firstName}} {{find.lastName}}
-							</div>
-							<div class="docExpertiseList">
-								{{find.specialtyName}}
-							</div>
-						</div>
-					</div>
-					<div layout="row" layout-align="space-between center" layout-xs="column">
-						<div layout="column">
-							<div layout="row" class="docTellList">
-								<div class="docTellOffice">{{ 'TELL' }}</div><div>{{find.office_tel}},{{find.telephone}}</div>
-							</div>
-							<div layout="row" class="docTellList">
-								<div class="docTellOffice">{{ 'FAX' }}</div><div>{{find.office_fax}},{{find.fax}}</div>
-							</div>
-						</div>										
-						<div class="docBtnList">
-							<md-button class="md-button" ng-click="#">{{ 'APPOINTMENT' }}</md-button>
-						</div>
-					</div>
-				</div>
-				<hr class="borderStyleList">
-				<div layout="column" layout-xs="column" layout-align="space-between center" layout-align-xs="start start">
-					<div layout="row">
-						<div class="docAddrTitle">{{ 'ADDRESS' }}:</div>
-						<div class="docAddr">{{find.address_name}} ({{find.addressType}}) {{find.cityName}} - {{find.mandatory_address}} {{find.optional_address}}</div>
-					</div>
-					<div layout="row">									
-						<div>{{ 'RATING'  }}: </div>
-						<star-rating class="star-rating" 
-							 rating-value="rating" 
-							 data-max="5" on-rating-selected="rateFunction(rating)" 
-							 ng-init="rating = 1">
-						</star-rating>									
-					</div>
-				</div>
-			</div>
-		</md-card>
-	</div>
-</md-content>-->
+
 <style>
+	.findInput{
+		width: 100%;
+		height: 35px;
+		border: none;
+		border-radius: 18px;
+		outline: none;
+		font-size: 15px;
+	}
+	.searchInputIcon{
+		background-color: white;border-radius: 20px;
+	}
+	.findNavbar{
+		background-color:#f6f4ff
+	}
+	.marginAndPaddingZero{
+		margin:0;
+		padding:0;
+	}
+	.searchRusultHover:hover{
+		background: rgb(246, 244, 255);
+	}
 	.docPicList img {
-			width: 150px;
-			height: 173px;
-			border-radius: 8px;
-			padding: 2px;
+			width: 149px;
+			height: 162px;
 			
 		}
 		.docNameList {
-			margin-right: 5px;
+			padding:0;
+			margin:0;
 			font-weight: bold;
-			margin: 10px 0;
+			
 		}
 		.docExpertiseList {
 			font-size: 17px;
@@ -294,6 +269,12 @@
 
 		#cityComboBox md-select-value {
 			border: none !important;
+		}
+		.menImgClass{
+			background-image: url('../images/Man.jpg');
+		}
+		.womanImgClass{
+			background-image: url('../images/Woman.jpg');
 		}
 </style>
 <div ng-init="design_30255(this)" style="display:none"></div></div>
