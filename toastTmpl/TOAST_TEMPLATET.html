@@ -1,0 +1,33 @@
+
+
+<md-toast  style="top:100px;right: 10px;background:{{(resCode==1)?'#052963':'#052963'}} ">
+	<div layout="row" dir="rtl">
+		<div ng-show="resCode==1">
+			<span style="position:relative;width:30px;">
+				<md-icon class="material-icons resultIcon" style="color : #00C6D7 !important">offline_pin</md-icon>
+			</span>
+			<span style="color: #00C6D7 ;font-weight:bold">{{resMsg}}</span>
+		</div>
+		<div ng-show="resCode!=1">
+			<span style="position:relative;width:30px;">
+				<md-icon class="material-icons resultIcon" style="color: #00C6D7 !important">info</md-icon>
+			</span>
+			<span style="color:orangered;font-weight:bold">{{resMsg}}</span>
+		</div>		
+	</div>
+
+
+</md-toast>
+
+<style>
+
+md-toast .md-toast-content{box-shadow:none}
+md-toast{right:50px !important;}
+.resultIcon{
+    font-size: 35px;
+    position: absolute;
+    top: 200px !important;
+    right: 2px;
+}
+</style>
+

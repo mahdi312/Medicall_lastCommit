@@ -5,8 +5,5 @@ angular.module("APP").controller("Design_10158", ['$rootScope', '$scope', '$http
 $rootScope.design_10158 = function($scope,param,$event){
 	
 };
-
-
-
 } 
 ]);

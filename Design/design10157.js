@@ -12,17 +12,14 @@ $rootScope.design_10157 = function($scope,param,$event){
 		localStorage.setItem("__localStorage.__token" , data.jwt_token);
 		localStorage.setItem("__localStorage.__CLIENT_ID" , data.client_id);
 		localStorage.setItem("__localStorage.__secId" , data.result);
-	
-		if(data.mdc_error_code == 1){
- 			$rootScope.__toastMessage = $filter('translate')(data.mdc_error_msg);
- 			// Design : getSecInfoById
- 			$rootScope.design_10158($scope);
-		}
-
-		if(data.mdc_error_code == -1){
- 			$rootScope.__toastMessage = $filter('translate')(data.mdc_error_msg);
-		}
-	}
+        if (data.mdc_error_code == -1) {
+            $rootScope.resultMsg(2, $filter('translate')(data.mdc_error_msg));
+        } else if (data.mdc_error_code == 1) {
+            $rootScope.resultMsg(1, $filter('translate')(data.mdc_error_msg));
+            // Design : getSecInfoById
+            $rootScope.design_10158($scope);
+        }
+	};
 	$rootScope.sendData($scope,url,$scope.secPassObj,'Post','callBack_10157');
 };
 

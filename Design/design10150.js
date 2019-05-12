@@ -11,7 +11,7 @@ $rootScope.design_10150 = function($scope,param,$event){
 	$scope.callBack_10150 = function(data){
 		
 		// $rootScope.signOut();
-	}
+	};
 	$rootScope.sendData($scope,url,null,'Get','callBack_10150');
 };
 

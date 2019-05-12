@@ -6,8 +6,5 @@ $rootScope.design_20202 = function($scope,param,$event){
 		localStorage.setItem("__localStorage.__nationalCode" , null);
 	
 };
-
-
-
 } 
 ]);

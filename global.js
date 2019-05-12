@@ -9,6 +9,35 @@ app.controller("globalCTRL", ['$rootScope','$scope', '$http','$q','$filter','$tr
 		localStorage.setItem("__localStorage.__lang",lang);
 	};
 
+	//toastMessage
+
+    var toastUrl="toastTmpl/TOAST_TEMPLATET.html";
+    $rootScope.resultMsg=function(status,message){
+        if(status!= null && status !=''  && status==1){
+            $rootScope.resCode=1;
+        }else
+            $rootScope.resCode=2;
+
+        if(message!= null && message !=''){
+            $rootScope.resMsg=message;
+        }else{
+            if(status!= null && status !='' && status==1)
+                $rootScope.resMsg= $filter('translate')('OPERATION_COMMITED');
+            else
+                $rootScope.resMsg= $filter('translate')('OPERATION_FAILED');
+        }
+        $scope.showResultToast();
+    };
+    $scope.showResultToast = function() {
+        $mdToast.show({
+            hideDelay   : 3000,
+            position    : 'top right',
+            templateUrl : toastUrl
+        });
+    };
+
+
+
 		// from webDefiner > 1
 
 $rootScope.getRand = function(){

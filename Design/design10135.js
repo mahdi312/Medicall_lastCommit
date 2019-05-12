@@ -9,7 +9,7 @@ $rootScope.design_10135 = function($scope,param,$event){
 	$scope.callBack_10135 = function(data){
 		$scope.PatientInfo = {};
 		$scope.PatientInfo = data ;
-	}
+	};
 	$rootScope.sendData($scope,url,null,'Get','callBack_10135');
 };
 

@@ -1,6 +1,9 @@
-<div oc-lazy-load="{name:'myApp',files:['Content/190649.js?r=1186413738','Design/design10112.js?r=1186413738','Design/design20240.js?r=415885810','scripts/angular-md5.js']}">
+<div oc-lazy-load="{name:'myApp',files:['Content/190649.js?r=1186413738','Design/design10116.js?r=1186413738','Design/design20198.js?r=1186413738','Design/design10100.js?r=1186413738','Design/design10112.js?r=1186413738','Design/design20240.js?r=415885810','scripts/angular-md5.js']}">
     <div ng-controller="Design_10112"></div>
     <div ng-controller="Design_20240"></div>
+    <div ng-controller="Design_10116"></div>
+    <div ng-controller="Design_20198"></div>
+    <div ng-controller="Design_10100"></div>
 
     <div ng-controller="Ctrl190649">
         <form id="formData" name="formData" layout-padding style="width: 450px">
@@ -10,7 +13,8 @@
                                 width: 110px;
                                 font-size: 110px;
                                 text-align: center;
-                                color: #00c6d7;">lock</md-icon>
+                                color: #00c6d7;">lock
+                    </md-icon>
                 </div>
                 <div layout-padding layout="row" layout-align="center center">
                     <div style="text-align: center ; font-size: small">
@@ -21,14 +25,14 @@
                 <md-input-container>
                     <md-icon>vpn_key</md-icon>
                     <input ng-model="Form.password__"
-                           type="password"
+                           type="{{inputType}}"
                            md-five="true"
                            minlength="6"
                            md-minlength="6"
                            name="password"
                            required
                            style="width: 386px">
-                    <md-icon class="material-icons">visibility_off</md-icon>
+                    <md-icon class="material-icons" ng-click="changeInputType()">{{visibility}}</md-icon>
                     <label>{{'PASSWORD'| translate }}</label>
                     <div class="hint" ng-show="!formData.password.$touched || formData.password.$valid">
                         {{'PASSWORD_HINT' | translate }}
@@ -44,8 +48,14 @@
                 </md-input-container>
                 <md-button
                         class="md-raised md-primary"
-                        ng-click="(formData.password.$valid)?makeDesign_272372():'';">
+                        style="background-color:#052963"
+                        ng-click="(formData.$valid)?makeDesign_272372():'';">
                     <span class="md-inline-list-icon-label">{{'SIGN_IN' | translate}}</span>
+                </md-button>
+                <md-button
+                        ng-click="makeDesign_272370();"
+                        style="color:#052963">
+                    <span class="md-inline-list-icon-label">{{'GO_TO_MY_PERSONAL_DASHBOARD' | translate}}</span>
                 </md-button>
             </div>
         </form>

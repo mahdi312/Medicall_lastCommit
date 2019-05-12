@@ -13,18 +13,15 @@ $rootScope.design_10117 = function($scope,param,$event){
 		localStorage.setItem("__localStorage.__token" , data.jwt_token);
 		localStorage.setItem("__localStorage.__CLIENT_ID" , data.client_id);
 		localStorage.setItem("__localStorage.__patientId" , data.result);
-		
-	
-		if(data.mdc_error_code == -1){
- 			$rootScope.__toastMessage = $filter('translate')(data.mdc_error_msg);
-		}
 
-		if(data.mdc_error_code == 1){
- 			$rootScope.__toastMessage = $filter('translate')(data.mdc_error_msg);
- 			// Design : goToPatientProfile
- 			$rootScope.design_20238($scope);
-		}
-	}
+        if (data.mdc_error_code == -1) {
+            $rootScope.resultMsg(2, $filter('translate')(data.mdc_error_msg));
+        } else if (data.mdc_error_code == 1) {
+            $rootScope.resultMsg(1, $filter('translate')(data.mdc_error_msg));
+            // Design : goToPatientProfile
+            $rootScope.design_20238($scope);
+        }
+	};
 	$rootScope.sendData($scope,url,$scope.patPassObj,'Post','callBack_10117');
 };
 

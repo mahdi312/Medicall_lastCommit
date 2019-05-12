@@ -9,6 +9,7 @@ $rootScope.design_20229 = function($scope,param,$event){
 		$scope.patientInfo = {} ;
 		$scope.patientInfo = data ; 
 		if(data.membershipStatus === 0){
+
 		$rootScope.setDashboard("patientDashboard","patientToDoctorPanel");
 		 	// Navigate : DoctorSignUp/PHYSICIAN_COUNCIL_CODE
 		 	$scope.navigateULR(180339,190483);
@@ -31,7 +32,7 @@ $rootScope.design_20229 = function($scope,param,$event){
 		 	// Navigate : DoctorSignUp/SPECIALITY
 		 	$scope.navigateULR(180339,190490);
 		}
-		}
+		};
 	$rootScope.sendData($scope,url,null,'Get','callBack_20229');
 };
 

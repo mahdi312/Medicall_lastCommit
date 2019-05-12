@@ -1,53 +1,70 @@
-<div oc-lazy-load="{name:'myApp',files:['Content/190648.js?r=954529455','Design/design10157.js?r=1305901346','Design/design10158.js?r=1305901346','scripts/angular-md5.js']}"> 
-	<div ng-controller="Design_10157"></div>
-<div ng-controller="Design_10158"></div>
+<div oc-lazy-load="{name:'myApp',files:['Content/190648.js?r=954529455',
+'Design/design10116.js?r=1186413738',
+'Design/design20198.js?r=1186413738',
+'Design/design10100.js?r=1186413738',
+'Design/design10157.js?r=1305901346',
+            'Design/design10158.js?r=1305901346',
+                    'scripts/angular-md5.js']}">
 
-	<div ng-controller="Ctrl190648">
-		<form id="formData" name="formData" layout-padding style="width: 450px">
-			<div layout="column" style="margin :0 auto">
-				<div layout="row" layout-align="center center">
-					<md-icon style="height: 110px;
+    <div ng-controller="Design_10157"></div>
+    <div ng-controller="Design_10158"></div>
+    <div ng-controller="Design_10116"></div>
+    <div ng-controller="Design_20198"></div>
+    <div ng-controller="Design_10100"></div>
+
+    <div ng-controller="Ctrl190648">
+        <form id="formData" name="formData" layout-padding style="width: 450px">
+            <div layout="column" style="margin :0 auto">
+                <div layout="row" layout-align="center center">
+                    <md-icon style="height: 110px;
                                 width: 110px;
                                 font-size: 110px;
                                 text-align: center;
-                                color: #00c6d7;">lock</md-icon>
-				</div>
-				<div layout-padding layout="row" layout-align="center center">
-					<div style="text-align: center ; font-size: small">
-						<span style="color: #00C6D7;">{{'DEAR_USER' | translate}}</span>
-						<span>{{'PLEASE_ENTER_YOUR_PASSWORD_OF_SECRETARY_DASHBOARD' | translate}}</span>
-					</div>
-				</div>
-				<md-input-container>
-					<md-icon>vpn_key</md-icon>
-					<input ng-model="Form.password__"
-						   type="password"
-						   md-five="true"
-						   minlength="6"
-						   md-minlength="6"
-						   name="password"
-						   required
-						   style="width: 386px">
-					<md-icon class="material-icons">visibility_off</md-icon>
-					<label>{{'PASSWORD'| translate }}</label>
-					<div class="hint" ng-show="!formData.password.$touched || formData.password.$valid">
-						{{'PASSWORD_HINT' | translate }}
-					</div>
-					<div ng-messages="formData.password.$error" role="alert" multiple>
-						<div ng-message="required" class="my-message">
-							{{ 'PASSWORD_IS_REQUIRED' | translate }}
-						</div>
-						<div ng-message="minlength" class="my-message">
-							{{ 'PASSWORD_MUST_BE_MORE_THAN_6_CHARS' | translate }}
-						</div>
-					</div>
-				</md-input-container>
-				<md-button
-						class="md-raised md-primary"
-						ng-click="(formData.password.$valid)?makeDesign_272372():'';">
-					<span class="md-inline-list-icon-label">{{'SIGN_IN' | translate}}</span>
-				</md-button>
-			</div>
-		</form>
-	</div> 
+                                color: #00c6d7;">lock
+                    </md-icon>
+                </div>
+                <div layout-padding layout="row" layout-align="center center">
+                    <div style="text-align: center ; font-size: small">
+                        <span style="color: #00C6D7;">{{'DEAR_USER' | translate}}</span>
+                        <span>{{'PLEASE_ENTER_YOUR_PASSWORD_OF_SECRETARY_DASHBOARD' | translate}}</span>
+                    </div>
+                </div>
+                <md-input-container>
+                    <md-icon>vpn_key</md-icon>
+                    <input ng-model="Form.password__"
+                           type="{{inputType}}"
+                           md-five="true"
+                           minlength="6"
+                           md-minlength="6"
+                           name="password"
+                           required
+                           style="width: 386px">
+                    <md-icon class="material-icons" ng-click="changeInputType()">{{visibility}}</md-icon>
+                    <label>{{'PASSWORD'| translate }}</label>
+                    <div class="hint" ng-show="!formData.password.$touched || formData.password.$valid">
+                        {{'PASSWORD_HINT' | translate }}
+                    </div>
+                    <div ng-messages="formData.password.$error" role="alert" multiple>
+                        <div ng-message="required" class="my-message">
+                            {{ 'PASSWORD_IS_REQUIRED' | translate }}
+                        </div>
+                        <div ng-message="minlength" class="my-message">
+                            {{ 'PASSWORD_MUST_BE_MORE_THAN_6_CHARS' | translate }}
+                        </div>
+                    </div>
+                </md-input-container>
+                <md-button
+                        class="md-raised md-primary"
+                        style="background-color:#052963"
+                        ng-click="(formData.$valid)?makeDesign_272372():'';">
+                    <span class="md-inline-list-icon-label">{{'SIGN_IN' | translate}}</span>
+                </md-button>
+                <md-button
+                        ng-click="makeDesign_272370();"
+                        style="color:#052963">
+                    <span class="md-inline-list-icon-label">{{'GO_TO_MY_PERSONAL_DASHBOARD' | translate}}</span>
+                </md-button>
+            </div>
+        </form>
+    </div>
 </div> 

@@ -26,17 +26,15 @@ $rootScope.design_10108 = function($scope,param,$event){
 		localStorage.setItem("__localStorage.__token", data.jwt_token);
 		localStorage.setItem("__localStorage.__CLIENT_ID", data.client_id);
 		localStorage.setItem("__localStorage.__doctorId", data.id);
-	
-		if(data.mdc_error_code == 1){
- 			$rootScope.__toastMessage = $filter('translate')(data.mdc_error_msg);
- 			// Navigate : DoctorSignUp/APPROVE_PAGE
- 			$scope.navigateULR(180339,190491);
-		}
 
-		if(data.mdc_error_code == -1){
- 			$rootScope.__toastMessage = $filter('translate')('SOME_FIELDS_ARE_EMPTY');
-		}
-	}
+        if (data.mdc_error_code == -1) {
+            $rootScope.resultMsg(2, $filter('translate')(data.mdc_error_msg));
+        } else if (data.mdc_error_code == 1) {
+            $rootScope.resultMsg(1, $filter('translate')(data.mdc_error_msg));
+            // Navigate : DoctorSignUp/APPROVE_PAGE
+            $scope.navigateULR(180339,190491);
+        }
+	};
 	$rootScope.sendData($scope,url,$rootScope.globalEntity4,'Post','callBack_10108');
 };
 

@@ -5,8 +5,5 @@ angular.module("APP").controller("Design_10159", ['$rootScope', '$scope', '$http
 $rootScope.design_10159 = function($scope,param,$event){
 	$rootScope.setDashboard("drDashboard","drProfilePanel");
 	};
-
-
-
 } 
 ]);
