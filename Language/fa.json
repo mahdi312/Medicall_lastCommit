@@ -104,7 +104,7 @@
 	"ARE_YOU_SURE_YOU_WANT_TO_CANCEL": "آیا مطمئن به لغو ثبت نام اکانت پزشک خود هستید؟",
 	"CHANGE_PHONE_NUMBER": "تصحیح شماره همراه",
 
-	"MEDICALL_COUNCIL_CODE": "شماره پزشک",
+	"MEDICALL_COUNCIL_CODE": "شماره نظام پزشکی",
 	"INSURANCE": "بیمه",
 	"SPECIALITY": "تخصص",
 	"SPECIALITIES": "تخصص ها",
@@ -182,6 +182,7 @@
 	"EDIT":"ویرایش",
 	"REMOVE":"حذف",
 	"ABORT":"لغو",
+	"ABORT_OF_REGISTRATION":"لغو عملیات",
 	"NEW":"جدید",
 
 	"PHYSICIAN_INFO": "اطلاعات پزشک",
@@ -209,6 +210,7 @@
 
 	"CHANGE_ACCOUNT":"شما می توانید تنظیمات حساب خود را در اینجا تغییر دهید.",
 	"YOUR_INFORMATION_HAS_BEEN_SAVED_IN_THE_MEDICALL_COMPREHENSIVE_SYSTEM":"اطلاعات شما در سامانه جامع مدیکال ذخیره گردید",
+	"PLEASE_CONFIRM_THE_INFORMATION_YOU_ENTERED":"لطفا صحت اطلاعات وارد شده خود را تایید نمایید",
 
 	"MY_PROFILE":"پروفایل من",
 	"UPLOADE_PROFILE":"آپلود جدید پروفایل",

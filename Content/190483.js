@@ -31,9 +31,6 @@ app = angular.module("APP").controller("Ctrl190483", ['$rootScope', '$scope', '$
         $rootScope.design_10119($scope, param);
     }
 
-    $scope.agreement = false;
-
-    $scope.flag = false;
 
 }]);
 app.requires.push('ngMaterial', 'ngStorage', 'oc.lazyLoad', 'pascalprecht.translate', 'ngMessages', 'ngMask');

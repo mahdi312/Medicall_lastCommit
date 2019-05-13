@@ -2110,7 +2110,9 @@ md-datepicker {
     max-width: 328px;
     padding: 0 0 5px
 }
-
+#datePickerId.md-datepicker-input md-input{
+    width: 400px !important;
+}
 .md-datepicker-input::-ms-clear {
     display: none
 }

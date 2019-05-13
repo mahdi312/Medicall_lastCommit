@@ -11,7 +11,7 @@
                                 width: 110px;
                                 font-size: 110px;
                                 text-align: center;
-                                color: #00c6d7;">person_add
+                                color: #00c6d7;">security
                     </md-icon>
                 </div>
                 <div layout-padding layout="row" layout-align="center center">
@@ -21,9 +21,9 @@
                     </div>
                 </div>
                 <md-input-container>
-                    <md-icon>vpn_key</md-icon>
+                    <md-icon>security</md-icon>
                     <input ng-model="Form.password__"
-                           type="password"
+                           type="{{inputType1}}"
                            md-five="true"
                            minlength="6"
                            md-minlength="6"
@@ -31,7 +31,7 @@
                            required
                            password-verify="{{Form.confirmPassword__}}"
                            style="width: 386px">
-                    <md-icon class="material-icons">visibility_off</md-icon>
+                    <md-icon class="material-icons" ng-click="changeInputType()">{{visibility1}}</md-icon>
                     <label>{{'PASSWORD'| translate }}</label>
                     <div class="hint"
                          ng-show="!formData.password.$touched || formData.password.$valid">
@@ -49,10 +49,10 @@
                         </div>
                     </div>
                 </md-input-container>
-                <md-input-container>
-                    <md-icon>vpn_key</md-icon>
+                <md-input-container >
+                    <md-icon>security</md-icon>
                     <input ng-model="Form.confirmPassword__"
-                           type="Password"
+                           type="{{inputType2}}"
                            md-five="true"
                            minlength="6"
                            md-minlength="6"
@@ -60,7 +60,7 @@
                            required
                            password-verify="{{Form.password__}}"
                            style="width: 386px">
-                    <md-icon class="material-icons">visibility_off</md-icon>
+                    <md-icon class="material-icons" ng-click="changeInputType1()">{{visibility2}}</md-icon>
                     <label>{{'CONFIRM_PASSWORD'| translate }}</label>
                     <div ng-messages="formData.confirmPassword.$error" role="alert">
                         <div ng-message="required" class="my-message">
@@ -81,21 +81,21 @@
                         style="margin-top: -25px">
                     <md-button
                             class="md-raised md-primary"
-                            style="background-color: #052963;border-radius: 30px;color: #fafafa;"
-                            ng-click="(formData.$valid)?makeDesign_272400():'';">
-                        <span class="md-inline-list-icon-label">{{'CONFIRM' | translate}}</span>
-                    </md-button>
-                    <md-button
-                            class="md-raised md-primary"
-                            style="background-color: #052963;border-radius: 30px;color: #fafafa;"
+                            style="background-color: #848587;color: #fafafa;"
                             ng-click="makeDesign_272399();">
                         <span class="md-inline-list-icon-label">{{'BACK' | translate}}</span>
                     </md-button>
                     <md-button
                             class="md-raised md-primary"
-                            style="background-color: #052963;border-radius: 30px;color: #fafafa;"
+                            style="background-color: #052963;color: #fafafa;"
+                            ng-click="(formData.$valid)?makeDesign_272400():'';">
+                        <span class="md-inline-list-icon-label">{{'CONFIRM' | translate}}</span>
+                    </md-button>
+                    <md-button
+                            class="md-raised md-primary"
+                            style="background-color: #848587;color: #fafafa;"
                             ng-click="makeDesign_293027();">
-                        <span class="md-inline-list-icon-label">{{'CANCEL' | translate}}</span>
+                        <span class="md-inline-list-icon-label">{{'ABORT_OF_REGISTRATION' | translate}}</span>
                     </md-button>
                 </div>
             </div>

@@ -7,70 +7,122 @@
         <form id="formData" name="formData" layout-padding style="width: 500px">
             <div layout="column" style="margin :0 auto">
                 <div layout="row" layout-align="center center">
+                    <md-icon style="height: 110px;
+                                width: 110px;
+                                font-size: 110px;
+                                text-align: center;
+                                color: #00c6d7;">playlist_add_check
+                    </md-icon>
+                </div>
+                <div layout="row" layout-align="center center">
                     <div style="text-align: center ; font-size: small ; padding: 0px; padding-bottom: 30px">
-                        <span style="color: #00C6D7;">{{'DEAR_USER' | translate}}</span>
-                        <span>{{'YOUR_INFORMATION_HAS_BEEN_SAVED_IN_THE_MEDICALL_COMPREHENSIVE_SYSTEM' | translate}}</span>
+                        <span>{{'PLEASE_CONFIRM_THE_INFORMATION_YOU_ENTERED' | translate}}</span>
                     </div>
                 </div>
-                <div layout="column" layout-align="center stretch">
-                    <div layout="row" layout-align="center stretch">
-                    <md-input-container class="margin-padding-zero"
-                            flex="50">
-                        <input ng-model="docInfo[0].doctorAccount.doctorNumber"
-                               ng-disabled="true">
-                        <label>{{'MEDICALL_COUNCIL_CODE'| translate }}</label>
-                        <div class="hint">{{'' | translate }}</div>
-                    </md-input-container>
-                    <md-input-container class="margin-padding-zero"
-                            flex="50">
-                        <input ng-model="docInfo[0].specialty.name"
-                               ng-disabled="true">
-                        <label>{{'SPECIALITY'| translate }}</label>
-                        <div class="hint">{{'' | translate }}</div>
-                    </md-input-container>
+                <div layout="column" layout-align="center center">
+                    <div layout="row" layout-align="center center">
+                        <md-input-container class="margin-padding-zero">
+                            <input ng-model="docInfo[0].doctorAccount.doctorNumber"
+                                   ng-disabled="true">
+                            <label>{{'MEDICALL_COUNCIL_CODE'| translate }}</label>
+                        </md-input-container>
                     </div>
-                    <div layout="row" layout-align="center stretch">
-                    <md-input-container class="margin-padding-zero"
-                            flex="50">
-                        <input ng-model="docInfo[0].doctorAccount.person.firstName+' ,'+docInfo[0].doctorAccount.person.lastName"
-                               ng-disabled="true">
-                        <label>{{'FIRST_NAME_AND_LAST_NAME'| translate }}</label>
-                        <div class="hint">{{'' | translate }}</div>
-                    </md-input-container>
-                    <md-input-container class="margin-padding-zero"
-                            flex="50">
-                        <md-icon>date</md-icon>
-                        <input ng-model="setStandardDate(docInfo[0].doctorAccount.person.birthDate)"
-                               ng-disabled="true">
-                        <label>{{'BIRTH_DATE'| translate }}</label>
-                        <div class="hint">{{'' | translate }}</div>
-                    </md-input-container>
+                    <div layout="row" layout-wrap layout-align="center center">
+                        <md-input-container class="margin-padding-zero"
+                                            flex="45">
+                            <input ng-model="docInfo[0].doctorAccount.person.firstName"
+                                   ng-disabled="true">
+                            <label>{{'FIRST_NAME'| translate }}</label>
+                        </md-input-container>
+                        <md-input-container class="margin-padding-zero"
+                                            flex="45">
+                            <input ng-model="docInfo[0].doctorAccount.person.lastName"
+                                   ng-disabled="true">
+                            <label>{{'LAST_NAME'| translate }}</label>
+                        </md-input-container>
                     </div>
-                    <div layout="row" layout-align="center stretch">
-                    <md-input-container class="margin-padding-zero"
-                            flex="50">
-                        <input ng-model="docInfo[0].address.postalCode" ng-pattern="/^[13-9]*$/"
-                               name="PostalCode" ng-disabled="true">
-                        <label>{{'WORKPLACE_POSTAL_CODE'| translate }}</label>
-                        <div class="hint">{{'' | translate }}</div>
-                    </md-input-container>
-                    <md-input-container class="margin-padding-zero"
-                                        flex="50">
-                        <input ng-model="docInfo[0].address.telephone + ' , ' +docInfo[0].address.fax"
-                               ng-disabled="true">
-                        <label>{{'GENERAL_WORK_PHONE_AND_FAX'| translate }}</label>
-                        <div class="hint">{{'' | translate }}</div>
-                    </md-input-container>
+                    <div layout="row" layout-wrap layout-align="center center">
+                        <md-input-container class="margin-padding-zero"
+                                            flex="45">
+                            <input ng-model="docInfo[0].doctorAccount.person.gender.description"
+                                   ng-disabled="true">
+                            <label>{{'SPECIALITY'| translate }}</label>
+                        </md-input-container>
+                        <md-input-container class="margin-padding-zero"
+                                            flex="45">
+                            <md-icon>date</md-icon>
+                            <input ng-model="docInfo[0].doctorAccount.person.birthDate"
+                                   ng-disabled="true">
+                            <label>{{'BIRTH_DATE'| translate }}</label>
+                        </md-input-container>
                     </div>
-                    <div layout="row" layout-align="center stretch">
-                    <md-input-container class="margin-padding-zero"
-                            flex="100">
-                        <input ng-model="docInfo[0].address.mandatoryAddress + ' ' + docInfo[0].address.optionalAddress"
-                               name="Address"
-                               ng-disabled="true">
-                        <label>{{'WORKPLACE_ADDRESS'| translate }}</label>
-                        <div class="hint">{{'' | translate }}</div>
-                    </md-input-container>
+                    <div layout="row" layout-align="center center">
+                        <md-input-container class="margin-padding-zero"
+                                            flex="50">
+                            <input ng-model="docInfo[0].specialty.name"
+                                   ng-disabled="true">
+                            <label>{{'SPECIALITY'| translate }}</label>
+                        </md-input-container>
+                    </div>
+                    <div layout="row" layout-wrap layout-align="center center">
+                        <md-input-container class="margin-padding-zero"
+                                            flex="45">
+                            <input ng-model="docInfo[0].address.addressType.description"
+                                   ng-disabled="true">
+                            <label>{{'FIRST_NAME'| translate }}</label>
+                        </md-input-container>
+                        <md-input-container class="margin-padding-zero"
+                                            flex="50">
+                            <input ng-model="docInfo[0].address.postalCode" ng-pattern="/^[13-9]*$/"
+                                   name="PostalCode" ng-disabled="true">
+                            <label>{{'WORKPLACE_POSTAL_CODE'| translate }}</label>
+                            <div class="hint">{{'' | translate }}</div>
+                        </md-input-container>
+                    </div>
+                    <div layout="row" layout-wrap layout-align="center center">
+                        <md-input-container class="margin-padding-zero"
+                                            flex="45">
+                            <input ng-model="docInfo[0].address.city.name"
+                                   name="city"
+                                   ng-disabled="true">
+                            <label>{{'WORKPLACE_ADDRESS'| translate }}</label>
+                        </md-input-container>
+                        <md-input-container class="margin-padding-zero"
+                                            flex="45">
+                            <input ng-model="docInfo[0].address.mandatoryAddress"
+                                   name="Address"
+                                   ng-disabled="true">
+                            <label>{{'WORKPLACE_ADDRESS'| translate }}</label>
+                            <div class="hint">{{'' | translate }}</div>
+                        </md-input-container>
+                    </div>
+                    <div layout="row" layout-wrap layout-align="center center">
+                        <md-input-container class="margin-padding-zero"
+                                            flex="45">
+                            <input ng-model="docInfo[0].workplace.telephone" ng-pattern="/^[13-9]*$/"
+                                   name="PostalCode" ng-disabled="true">
+                            <label>{{'WORKPLACE_POSTAL_CODE'| translate }}</label>
+                        </md-input-container>
+                        <md-input-container class="margin-padding-zero"
+                                            flex="45">
+                            <input ng-model="docInfo[0].address.telephone + ' , ' +docInfo[0].address.fax"
+                                   ng-disabled="true">
+                            <label>{{'GENERAL_WORK_PHONE_AND_FAX'| translate }}</label>
+                        </md-input-container>
+                    </div>
+                    <div layout="row" layout-wrap layout-align="center center">
+                        <md-input-container class="margin-padding-zero"
+                                            flex="45">
+                            <input ng-model="docInfo[0].workplace.telephone" ng-pattern="/^[13-9]*$/"
+                                   name="PostalCode" ng-disabled="true">
+                            <label>{{'WORKPLACE_POSTAL_CODE'| translate }}</label>
+                        </md-input-container>
+                        <md-input-container class="margin-padding-zero"
+                                            flex="45">
+                            <input ng-model="docInfo[0].address.telephone + ' , ' +docInfo[0].address.fax"
+                                   ng-disabled="true">
+                            <label>{{'GENERAL_WORK_PHONE_AND_FAX'| translate }}</label>
+                        </md-input-container>
                     </div>
                 </div>
                 <div
@@ -86,10 +138,16 @@
                     </md-checkbox>
                     <md-button
                             class="md-raised md-primary"
-                            style="background-color: #052963;border-radius: 30px;color: #fafafa;"
-                            ng-disabled=""
+                            style="background-color: #052963;color: #fafafa;"
+                            ng-disabled="!agreement"
+                            ng-click="makeDesign_272417();">
+                        <span class="md-inline-list-icon-label">{{'CONFIRM' | translate}}</span>
+                    </md-button>
+                    <md-button
+                            class="md-raised md-primary"
+                            style="background-color: #848587;color: #fafafa;"
                             ng-click="makeDesign_272409();">
-                        <span class="md-inline-list-icon-label">{{'ABORT' | translate}}</span>
+                        <span class="md-inline-list-icon-label">{{'ABORT_OF_REGISTRATION' | translate}}</span>
                     </md-button>
                     <md-button
                             class="md-raised md-primary"
@@ -98,11 +156,11 @@
                         <span class="md-inline-list-icon-label">{{'GO_TO_YOUR_PHYSICIAN_DASHBOARD' | translate}}</span>
                     </md-button>
                 </div>
-                    <div ng-init="design_20209(this)" style="display:none"></div>
-                    <div ng-init="getInitData('docInfo','','0','workplace/list/doctor/'+docId+'',{},this)"
-                         style="display:none">
-                    </div>
+                <div ng-init="design_20209(this)" style="display:none"></div>
+                <div ng-init="getInitData('docInfo','','0','workplace/list/doctor/'+docId+'',{},this)"
+                     style="display:none">
                 </div>
+            </div>
         </form>
     </div>
 </div> 

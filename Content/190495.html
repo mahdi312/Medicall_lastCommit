@@ -5,8 +5,16 @@
     <div ng-controller="Design_10123"></div>
 
     <div ng-controller="Ctrl190495">
-        <form id="formData" name="formData" layout-padding style="width: 666px">
+        <form id="formData" name="formData" layout-padding style="width: 750px">
             <div layout="column" style="margin :0 auto">
+                <div layout="row" layout-align="center center">
+                    <md-icon style="height: 110px;
+                                width: 110px;
+                                font-size: 110px;
+                                text-align: center;
+                                color: #00c6d7;">domain
+                    </md-icon>
+                </div>
                 <div layout="row" layout-align="center center">
                     <div style="text-align: center ; font-size: small ; padding: 0px;">
                         <span style="color: #00C6D7;">{{'DEAR_USER' | translate}}</span>
@@ -14,19 +22,9 @@
                     </div>
                 </div>
 
-                <div layout="row" layout-align="center center">
-                    <md-input-container class="margin-padding-zero" flex="20">
-                        <md-icon>location_city</md-icon>
-                        <md-select required
-                                   md-on-open="getDynamicData('__cityList','','0','/base/list/city','city',[],this)"
-                                   ng-model="Form.city" placeholder="{{'CITY' | translate}}">
-                            <md-option ng-repeat="item in __cityList" value="{{item.id}}">
-                                {{item.name}}
-                            </md-option>
-                        </md-select>
-                    </md-input-container >
-                    <md-input-container class="margin-padding-zero" flex="30">
-                        <md-icon>flag</md-icon>
+                <div layout="row" layout-wrap layout-align="center center">
+                    <md-input-container flex="45" class="margin-padding-zero" >
+                        <md-icon>domain</md-icon>
                         <md-select required
                                    md-on-open="getDynamicData('__addresstype','','0','/base/list/catalogdetail/ADDRESS_TYPE','',[],this)"
                                    ng-model="Form.addressType" placeholder="{{'ADDRESS_TYPE' | translate}}">
@@ -35,7 +33,7 @@
                             </md-option>
                         </md-select>
                     </md-input-container>
-                    <md-input-container class="margin-padding-zero" flex="50" style="bottom: -12px">
+                    <md-input-container flex="45" class="margin-padding-zero"  >
                         <md-icon>local_post_office</md-icon>
                         <input ng-model="Form.postalCode"
                                ng-pattern="/^[13-9]*$/"
@@ -61,8 +59,18 @@
                         </div>
                     </md-input-container>
                 </div>
-                <div layout="row" layout-align="center center">
-                    <md-input-container class="margin-padding-zero"
+                <div layout="row" layout-wrap layout-align="center center">
+                    <md-input-container flex="45" class="margin-padding-zero">
+                        <md-icon>location_city</md-icon>
+                        <md-select required
+                                   md-on-open="getDynamicData('__cityList','','0','/base/list/city','city',[],this)"
+                                   ng-model="Form.city" placeholder="{{'CITY' | translate}}">
+                            <md-option ng-repeat="item in __cityList" value="{{item.id}}">
+                                {{item.name}}
+                            </md-option>
+                        </md-select>
+                    </md-input-container >
+                    <md-input-container flex="45" class="margin-padding-zero"
                             flex="50">
                         <md-icon>place</md-icon>
                         <input ng-model="Form.mandatoryAddress"
@@ -86,26 +94,12 @@
                             </div>
                         </div>
                     </md-input-container>
-                    <md-input-container class="margin-padding-zero"
-                            flex="50">
-                        <md-icon>place</md-icon>
-                        <input ng-model="Form.optionalAddress"
-                               maxlength="100"
-                               md-maxlength="100"
-                               name="optionalAddress">
-                        <label>{{'WORKPLACE_SUPPLEMENTARY_ADDRESS'| translate }}</label>
-                        <div class="hint">{{'' | translate }}</div>
-                        <div ng-messages="formData.optionalAddress.$error" role="alert">
-                            <div ng-message="maxlength" class="my-message">
-                                {{ 'SUPPLEMENTARY_ADDRESS_MUST_BE_LESS_THAN_100_DIGITS' | translate }}
-                            </div>
-                        </div>
-                    </md-input-container>
                 </div>
 
                 <div layout="row"
-                     ayout-align="center stretch">
-                    <md-input-container  class="margin-padding-zero" flex="50" >
+                     layout-align="center center"
+                     layout-wrap>
+                    <md-input-container  class="margin-padding-zero" flex="45" >
                         <md-icon>local_phone</md-icon>
                         <input ng-model="Form.officeTel" ng-pattern="/^[0-9]*$/"
                                md-
@@ -126,8 +120,8 @@
                             </div>
                         </div>
                     </md-input-container>
-                    <md-input-container class="margin-padding-zero" flex="50">
-                        <md-icon>local_phone</md-icon>
+                    <md-input-container class="margin-padding-zero" flex="45">
+                        <md-icon>local_print_shop</md-icon>
                         <input ng-model="Form.officeFax"
                                ng-pattern="/^[0-9]*$/"
                                md-
@@ -147,8 +141,9 @@
                     </md-input-container>
                 </div>
                 <div layout="row"
-                     layout-align="center stretch">
-                    <md-input-container class="margin-padding-zero"
+                     layout-align="center center"
+                     layout-wrap>
+                    <md-input-container flex="45" class="margin-padding-zero"
                             flex="50">
                         <md-icon>local_phone</md-icon>
                         <input ng-model="Form.telephone"
@@ -171,9 +166,9 @@
                             </div>
                         </div>
                     </md-input-container>
-                    <md-input-container class="margin-padding-zero"
+                    <md-input-container flex="45" class="margin-padding-zero"
                             flex="50">
-                        <md-icon>local_phone</md-icon>
+                        <md-icon>local_print_shop</md-icon>
                         <input ng-model="Form.fax"
                                ng-pattern="/^[0-9]*$/"
                                maxlength="11"
@@ -201,24 +196,23 @@
                         layout-wrap
                         layout-align="center stretch"
                         style="margin-top: 0px">
-                    <md-checkbox
-                            style="font-size: 11px ; margin-top: 15px"
-                            ng-model="agreement"
-                            ng-disabled="!(formData.$valid)">
-                        {{'ALL_THE_ABOVE_INFORMATION_IS_UNDER_MY_AGREEMENT'|translate}}
-                    </md-checkbox>
                     <md-button
                             class="md-list-item-content md-primary"
-                            style="background-color: #052963;border-radius: 30px;color: #fafafa;"
-                            ng-click="makeDesign_272436();"
-                            ng-disabled="!agreement">
+                            style="background-color: #848587;color: #fafafa;"
+                            ng-click="makeDesign_272437();">
+                        <span class="md-inline-list-icon-label">{{'BACK' | translate}}</span>
+                    </md-button>
+                    <md-button
+                            class="md-list-item-content md-primary"
+                            style="background-color: #052963;color: #fafafa;"
+                            ng-click="makeDesign_272436();">
                         <span class="md-inline-list-icon-label">{{'CONFIRM' | translate}}</span>
                     </md-button>
                     <md-button
                             class="md-list-item-content md-primary"
-                            style="background-color: #052963;border-radius: 30px;color: #fafafa;"
+                            style="background-color: #848587;color: #fafafa;"
                             ng-click="makeDesign_293029();">
-                        <span class="md-inline-list-icon-label">{{'CANCEL' | translate}}</span>
+                        <span class="md-inline-list-icon-label">{{'ABORT_OF_REGISTRATION' | translate}}</span>
                     </md-button>
                 </div>
             </div>

@@ -28,9 +28,35 @@ $scope.makeDesign_272400 = function(param){
 } 
 
 $scope.makeDesign_293027 = function(param){ 
-	 $rootScope.design_10123($scope,param); 
-} 
+	 $rootScope.design_10123($scope,param);
+}
+    $scope.inputType1 = "password";
+    $scope.visibility1 = 'visibility_off';
 
+    $scope.changeInputType = function () {
+        if ($scope.inputType1 == "password") {
+            $scope.inputType1 = "text";
+            $scope.visibility1 = 'visibility_on';
+        } else {
+            $scope.inputType1 = "password";
+            $scope.visibility1 = 'visibility_off';
+
+        }
+    }
+
+    $scope.inputType2 = "password";
+    $scope.visibility2 = 'visibility_off';
+
+    $scope.changeInputType1 = function () {
+        if ($scope.inputType2 == "password") {
+            $scope.inputType2 = "text";
+            $scope.visibility2 = 'visibility_on';
+        } else {
+            $scope.inputType2 = "password";
+            $scope.visibility2 = 'visibility_off';
+
+        }
+    }
  
 }]);
 app.requires.push('ngMaterial','ngStorage','oc.lazyLoad','pascalprecht.translate','ngMessages','angular-md5');

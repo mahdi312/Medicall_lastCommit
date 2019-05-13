@@ -192,6 +192,7 @@
 	"VERIFY": "Verify",
 	"BACK": "Back",
 	"IDENTIFY": "Identify",
+	"ABORT_OF_REGISTRATION": "َAbort Of Registration",
 
 	"YEAR": "yyyy",
 	"MONTH": "mm",
@@ -221,6 +222,7 @@
 
 	"CHANGE_ACCOUNT":"You can change your account setting here.",
 	"YOUR_INFORMATION_HAS_BEEN_SAVED_IN_THE_MEDICALL_COMPREHENSIVE_SYSTEM":"Your Information Has Been Saved In The Medicall Comprehensive System",
+	"PLEASE_CONFIRM_THE_INFORMATION_YOU_ENTERED":"Please Confirm The Information You Entered",
 
 	"ACCOUNT_STATUS":"Account Status:",
 	"USER_IS_ACTIVE":"Your user is currently active",
