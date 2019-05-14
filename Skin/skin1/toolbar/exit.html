@@ -1,0 +1,16 @@
+<div oc-lazy-load="{ name: 'YourApp', files: [skinPath+'js/exit.js?r='+rand] }">
+	<div ng-controller="exitCtrl" layout="row" class="langBx">
+		<div ng-init="design_10135(this)"></div>
+		<md-menu-bar style="padding:0;margin:0">
+			<md-menu>
+				<md-button 
+					ng-confirm-click={{'EXIT_CONFIRM'|translate}}
+					confirmed-click="design_10150(this)"
+					style="padding:0;margin:0" 
+					class="md-icon-button">
+					<md-icon style="font-size:20px !important">exit_to_app</md-icon>
+				</md-button>
+			</md-menu>
+		</md-menu-bar>
+	</div>
+</div>

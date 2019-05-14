@@ -28,82 +28,63 @@
                     <span class="md-inline-list-icon-label" style="font-size:15px; color: #00C6D7;">{{'CHANGE' | translate}}</span>
                     <span class="md-inline-list-icon-label" style="font-size:15px; color: #000000;">{{'MOBILE_NUMBER' | translate}}</span>
                 </md-button>
-                <!--<div id="verifyForm" layout="row" layout-align="center center">-->
-                <!--<input  ng-model="Form.verifyCode1" ng-pattern="/^[0-9]{1}/" minlength="4" md-minlength="4" maxlength="1" md-maxlength="1" name="verifyCode" valid-number required/>-->
-                <!--<input  maxLength="1" size="1" min="0" max="9" valid-number pattern="[0-9]{1}"/>-->
-                <!--<input  maxLength="1" size="1" min="0" max="9" valid-number pattern="[0-9]{1}"/>-->
-                <!--<input  maxLength="1" size="1" min="0" max="9" valid-number pattern="[0-9]{1}"/>-->
-                <!--</div>-->
 
-                <md-input-container
-                        flex="100" flex-xs="100">
-                    <md-icon>sms</md-icon>
-                    <input ng-model="Form.verifyCode"
-                           ng-pattern="/^[0-9]/"
-                           minlength="4"
-                           md-minlength="4"
-                           maxlength="4"
-                           md-maxlength="4"
-                           name="verifyCode"
-                           required>
-                    <label>{{'VERIFICATION_CODE'| translate }}</label>
-                    <div class="hint" ng-show="!formData.verifyCode.$touched || formData.verifyCode.$valid">
-                        {{'VERIFY_CODE_HINT' | translate }}
-                    </div>
-                    <div ng-messages="formData.verifyCode.$error" role="alert">
-                        <div ng-message="pattern" class="my-message">
-                            {{ 'VERIFY_CODE_MUST_BE_NUMBER' | translate }}
-                        </div>
-                        <div ng-message="required" class="my-message">
-                            {{ 'VERIFY_CODE_IS_REQUIRED' | translate }}
-                        </div>
-                        <div ng-message="maxlength" class="my-message">
-                            {{ 'VERIFY_CODE_IS_MORE_THAN_4_DIGITS' | translate }}
-                        </div>
-                        <div ng-message="minlength" class="my-message">
-                            {{ 'VERIFY_CODE_IS_LESS_THAN_4_DIGITS' | translate }}
-                        </div>
-                    </div>
-                </md-input-container>
+                <!--<md-input-container-->
+                        <!--flex="100" flex-xs="100">-->
+                    <!--<md-icon>sms</md-icon>-->
+                    <!--<input ng-model="Form.verifyCode"-->
+                           <!--ng-pattern="/^[0-9]/"-->
+                           <!--minlength="4"-->
+                           <!--md-minlength="4"-->
+                           <!--maxlength="4"-->
+                           <!--md-maxlength="4"-->
+                           <!--name="verifyCode"-->
+                           <!--required>-->
+                    <!--<label>{{'VERIFICATION_CODE'| translate }}</label>-->
+                    <!--<div class="hint" ng-show="!formData.verifyCode.$touched || formData.verifyCode.$valid">-->
+                        <!--{{'VERIFY_CODE_HINT' | translate }}-->
+                    <!--</div>-->
+                    <!--<div ng-messages="formData.verifyCode.$error" role="alert">-->
+                        <!--<div ng-message="pattern" class="my-message">-->
+                            <!--{{ 'VERIFY_CODE_MUST_BE_NUMBER' | translate }}-->
+                        <!--</div>-->
+                        <!--<div ng-message="required" class="my-message">-->
+                            <!--{{ 'VERIFY_CODE_IS_REQUIRED' | translate }}-->
+                        <!--</div>-->
+                        <!--<div ng-message="maxlength" class="my-message">-->
+                            <!--{{ 'VERIFY_CODE_IS_MORE_THAN_4_DIGITS' | translate }}-->
+                        <!--</div>-->
+                        <!--<div ng-message="minlength" class="my-message">-->
+                            <!--{{ 'VERIFY_CODE_IS_LESS_THAN_4_DIGITS' | translate }}-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</md-input-container>-->
 
-                <!--<div layout="row" layout-align="center center">-->
-                    <!--<div style="border: groove;background-color: lightgray ;border-radius: 10px;">-->
-                        <!--<md-input-container>-->
-                            <!--<input ng-model="Form.verifyCode1" ng-pattern="/^[0-9]{1}/" minlength="4" md-minlength="4"-->
-                                   <!--maxlength="1" md-maxlength="1" name="verifyCode1" valid-number required/>-->
-                            <!--<div class="md-errors-spacer" style="display: none;"></div>-->
-                        <!--</md-input-container>-->
-                    <!--</div>-->
-                    <!--<div style="border: groove;background-color: lightgray; border-radius: 10px;">-->
-                        <!--<md-input-container>-->
-                            <!--<input ng-model="Form.verifyCode2" ng-pattern="/^[0-9]{1}/" minlength="4" md-minlength="4"-->
-                                   <!--maxlength="1" md-maxlength="1" name="verifyCode2" valid-number required/>-->
-                            <!--<div class="md-errors-spacer" style="display: none;"></div>-->
-                        <!--</md-input-container>-->
-                    <!--</div>-->
-                    <!--<div style="border: groove;background-color: lightgray; border-radius: 10px;">-->
-                        <!--<md-input-container>-->
-                            <!--<input ng-model="Form.verifyCode3" ng-pattern="/^[0-9]{1}/" minlength="4" md-minlength="4"-->
-                                   <!--maxlength="1" md-maxlength="1" name="verifyCode3" valid-number required/>-->
-                            <!--<div class="md-errors-spacer" style="display: none;"></div>-->
-                        <!--</md-input-container>-->
-                    <!--</div>-->
-                    <!--<div style="border: groove;background-color: lightgray ;border-radius: 10px;">-->
-                        <!--<md-input-container>-->
-                            <!--<input ng-model="Form.verifyCode4" ng-pattern="/^[0-9]{1}/" minlength="4" md-minlength="4"-->
-                                   <!--maxlength="1" md-maxlength="1" name="verifyCode4" valid-number required/>-->
-                            <!--<div class="md-errors-spacer" style="display: none;"></div>-->
-                        <!--</md-input-container>-->
-                    <!--</div>-->
-                <!--</div>-->
+                <div dir="ltr" layout="row" layout-wrap layout-padding layout-align="center center">
+                    <input class="verifyInput" flex="10" type="text" id="part[$index]" ng-focus="$index==3" ng-model="Form.verifyCode1" maxlength="1" move-next-on-maxlength />
+                    <input class="verifyInput" flex="10" type="text" id="part[$index]" ng-focus="$index==2" ng-model="Form.verifyCode2" maxlength="1" move-next-on-maxlength />
+                    <input class="verifyInput" flex="10" type="text" id="part[$index]" ng-focus="$index==1" ng-model="Form.verifyCode3" maxlength="1" move-next-on-maxlength />
+                    <input class="verifyInput" flex="10" type="text" id="part[$index]" ng-focus="$index==0" ng-model="Form.verifyCode4" maxlength="1" />
+                </div>
                 <md-button
                         class="md-raised md-primary"
                         ng-click="makeDesign_293353();" flex="100" flex-xs="100"
                         style="background-color: #052963; border-radius: 4px">
                     <span class="md-inline-list-icon-label">{{'SEND_VERIFY_CODE' | translate}}</span>
                 </md-button>
+                <div ng-show="{{showCountDownTimer}}" layout="row" layout-align="center center" layout-padding>
+                    <div class="countdownTimer" layout="row" layout-align="center center">{{counter | secondsToDateTime
+                        | date:'ss'}}
+                    </div>
+                    <div layout="row" layout-align="center center" style="color:#676767;margin:0;padding:1px">:</div>
+                    <div class="countdownTimer" layout="row" layout-align="center center">{{counter | secondsToDateTime
+                        | date:'mm'}}
+                    </div>
+                </div>
                 <md-button
-                        ng-click="makeDesign_293355();" flex="45" flex-xs="100">
+                        ng-click="makeDesign_293355();"
+                        ng-disabled="{{resendButton}}"
+                        flex="45" flex-xs="100">
                     <md-icon class="material-icons">forward_30</md-icon>
                     <span class="md-inline-list-icon-label" style="font-size:15px; color: #00C6D7;">{{'RESEND' | translate}}</span>
                     <span class="md-inline-list-icon-label" style="font-size:15px; color: #000000;">{{'CODE_TO_MOBILE_NUMBER' | translate}}</span>

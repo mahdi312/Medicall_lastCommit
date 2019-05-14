@@ -17,7 +17,8 @@
 				</div>
 				<div flex="15">
 					<md-button
-							style="width: 100%;background-color: #052963;border-radius: 18px;" flex-gt-sm class="md-block"
+							class="findButton"
+							flex-gt-sm class="md-block"
 							class="md-primary"
 							ng-click="makeDesign_293251();">
 						<span class="md-inline-list-icon-label">{{'جستجو' | translate}}</span>
@@ -25,9 +26,9 @@
 				</div>
 				<div flex="75">
 					<div flex="100" layout="row" layout-align="space-between center">
-						<div flex="20" style="border: 1px solid; border-radius: 22px;padding: 5px;font-size: 15px;background-color:white" layout="row">
+						<div flex="20" class="findCitySelectBoxDiv" layout="row">
 							<md-select id="cityComboBox" flex="100"
-									style="padding:0;margin:0;color: black;"
+									class="findCityComboBox"
 									md-on-open="getDynamicData('__cityList','','0','/base/list/city','country',[],this)"
 									ng-model="Form.city.id" placeholder="{{'شهر' | translate}}">
 								<md-option ng-repeat="item in __cityList" value="{{item.id}}">
@@ -35,11 +36,11 @@
 								</md-option>
 							</md-select>
 						</div>
-						<div layout="row" layout-align="space-between center" style="font-size:12px;background-color: white;color: black;border-radius: 22px;">
+						<div layout="row" layout-align="space-between center" class="findGenderDiv">
 							<div layout="row" layout-align="center center">
 								<md-icon style="margin: 5px;color: #032a61;">supervisor_account</md-icon>
-								<md-input-container style="padding:0;margin:0" class="md-block" flex-gt-sm>
-									<md-radio-group style="padding:0;margin:0" flex-gt-sm layout-padding layout="row"
+								<md-input-container class="marginAndPaddingZero" class="md-block" flex-gt-sm>
+									<md-radio-group class="marginAndPaddingZero" flex-gt-sm layout-padding layout="row"
 													ng-model="Form.person.gender.id">
 										<md-radio-button
 												ng-repeat="item in [{'title':'MALE','id':11},{'title':'FEMALE','id':12},{'title':'NO_DIFFRENCE','id':13}]"
@@ -49,11 +50,11 @@
 								</md-input-container>
 							</div>
 						</div>
-						<div layout="row" style="font-size:12px;background-color: white;color: black;border-radius: 22px;">
+						<div layout="row" class="findTimeDiv">
 							<div layout="row" layout-align="center center">
 								<md-icon style="margin: 5px;color: #032a61;">schedule</md-icon>
-								<md-input-container style="padding:0;margin:0" class="md-block" flex-gt-sm>
-									<md-radio-group style="padding:0;margin:0" flex-gt-sm layout-padding layout="row"
+								<md-input-container class="marginAndPaddingZero" class="md-block" flex-gt-sm>
+									<md-radio-group class="marginAndPaddingZero" flex-gt-sm layout-padding layout="row"
 													ng-model="Form.person.time.id">
 										<md-radio-button
 												ng-repeat="item in [{'title':'TODAY','id':1},{'title':'THREE_DAYS_LATER','id':2},{'title':'ONE_WEEK_LATER','id':3},{'title':'NO_DIFFRENCE','id':4}]"
@@ -67,7 +68,8 @@
 				</div>
 				<div flex="15">
 					<md-button
-							style="width:100%;background-color:white;color: #818286;border-radius: 18px;" flex-gt-sm class="md-block"
+							class="findAdvanceButton"
+							flex-gt-sm class="md-block"
 							class="md-primary"
 							ng-click="flag=!flag">
 							<md-icon style="color:#072a64;font-size: 28px;">
@@ -77,10 +79,10 @@
 					</md-button>
 				</div>
 			</div>
-			<div  style="margin:0;padding:0;margin-top: 10px;" layout="row" layout-align="center center">
+			<div style="margin:0;padding:0;margin-top: 10px;" layout="row" layout-align="center center">
 				<div flex="90">
-					<div flex="100" style="color:black;background-color:white" layout="row" layout-align="space-between center">
-						<div style="border: 1px solid; border-radius: 22px;padding: 5px;font-size: 15px;" layout="row">
+					<div flex="100" class="findDateNavigatorFilterDiv" layout="row" layout-align="space-between center">
+						<div class="findFiletrDiv" layout="row">
 							<div style="color:#818286">مرتب سازی:</div>
 							<select
 								style="border: none;outline: none;"
@@ -91,17 +93,19 @@
 							</select>
 						</div>
 						<div style="color:black;font-size: 15px;">
-							<div style="margin:0;padding:0" layout="row" layout-align="center center" layout-padding ng-init="setLocal('fa')">
-								<div layout="row" layout-align="center center"><md-icon style="color:#062963;cursor: pointer;outline: none;" ng-click="next()">keyboard_arrow_right</md-icon></div>
-								<div layout="column" layout-align="center center" style="background: #dff7f9;width: 131px;height: 90px">
+							<div class="marginAndPaddingZero" layout="row" layout-align="center center" layout-padding ng-init="setLocal('fa')">
+								<div layout="row" layout-align="center center">
+									<md-icon style="color:#062963;cursor: pointer;outline: none;" ng-click="next()">keyboard_arrow_right</md-icon>
+								</div>
+								<div layout="column" layout-align="center center" class="findDateNavigatorBlocks">
 									<div>{{todayDateName}}</div><!-- -->
 									<div style="color:#4bd0e1">{{todayDate}} {{todayMonthName}}</div>
 								</div>
-								<div layout="column" layout-align="center center" style="background-color:#c9f1f3;width: 131px;height: 90px">
+								<div layout="column" layout-align="center center" class="findDateNavigatorBlocks">
 									<div>{{tomarrowDateName}}</div>
 									<div style="color:#4bd0e1">{{tomarrowDate}} {{tomarrowMonthName}}</div>
 								</div>
-								<div layout="column" layout-align="center center" style="background: #dff7f9;width: 131px;height: 90px">
+								<div layout="column" layout-align="center center" class="findDateNavigatorBlocks">
 									<div>{{dayAfterTomarrowDateName}}</div>
 									<div style="color:#4bd0e1">{{dayAfterTomarrowDate}} {{dayAfterTomarrowMonthName}}</div>
 								</div>
@@ -111,15 +115,18 @@
 					</div>
 				</div>
 			</div>
-
 			<!--<div ng-show="flag">
-				<div style="background-color:red;position: relative;">
+				<div style="background-color:red;">
 					gfd
 				</div>
 			</div>-->
-
 		</form>
 	</div>
+	<!--<div layout="row" layout-padding>
+		<div class="countdownTimer" layout="row" layout-align="center center">{{counter | secondsToDateTime | date:'ss'}}</div>
+		<div layout="row" layout-align="center center" style="color:#676767;margin:0;padding:1px">:</div>
+		<div class="countdownTimer" layout="row" layout-align="center center">{{counter | secondsToDateTime | date:'mm'}}</div>
+	</div>-->
 	<div layout="row" layout-align="center center">
 		<div flex="90">
 			<md-content style="background: #f0f8ff00;" flex="100">
@@ -155,17 +162,81 @@
 								</div>
 							</div>
 							
-							<div layout="row" style="margin-left: 30px;">
+							<div layout="row" style="margin-left: 33px;">
 								<img src="../images/books.png" />
 							</div>
 						</div>
-						
 					</md-card>
 			</md-content>
 		</div>
 	</div>
-
 <style>
+	
+	.countdownTimer{
+		background-color: #676767;
+		font-size: 15px;
+		margin: 0;
+		padding: 0;
+		width: 25px;
+		height: 25px;
+		border-radius: 4px;
+	}
+	.docPicList img {
+		width: 149px;
+		height: 162px;
+	}
+	.findDateNavigatorBlocks{
+		background: #dff7f9;
+		width: 131px;
+		height: 90px;
+		margin: 1px;
+	}
+	.findFiletrDiv{
+		border: 1px solid;
+		border-radius: 22px;
+		padding: 5px;
+		font-size: 15px;
+	}
+	.findDateNavigatorFilterDiv{
+		color:black;
+		background-color:white
+	}
+	.findAdvanceButton{
+		width:100%;
+		background-color:white;
+		color: #818286;
+		border-radius: 18px;
+	}
+	.findTimeDiv{
+		font-size:12px;
+		background-color: white;
+		color: black;
+		border-radius: 22px;
+	}
+	.findGenderDiv{
+		font-size:12px;
+		background-color: white;
+		color: black;
+		border-radius: 22px;
+	}
+	.findCityComboBox{
+		padding:0;
+		margin:0;
+		color: black;
+	}
+	.findCitySelectBoxDiv{
+		border: none;
+		border-radius: 22px;
+		padding: 5px;
+		font-size: 15px;
+		background-color:white
+	}
+	.findButton{
+		width: 100%;
+		background-color: #052963;
+		border-radius: 18px;
+		color: white;
+	}
 	.findInput{
 		width: 100%;
 		height: 35px;
@@ -175,7 +246,8 @@
 		font-size: 15px;
 	}
 	.searchInputIcon{
-		background-color: white;border-radius: 20px;
+		background-color: white;
+		border-radius: 20px;
 	}
 	.findNavbar{
 		background-color:#f6f4ff
@@ -187,95 +259,66 @@
 	.searchRusultHover:hover{
 		background: rgb(246, 244, 255);
 	}
-	.docPicList img {
-			width: 149px;
-			height: 162px;
-			
-		}
-		.docNameList {
-			padding:0;
-			margin:0;
-			font-weight: bold;
-			
-		}
-		.docExpertiseList {
-			font-size: 17px;
-			color: #0075bb;
-			margin-right: 5px;			
-		}
-		.docBtnList button {
-			background: #7F345B !important;
-			border-radius: 5px;
-			color: #fff;
-		}
-		.docAddrTitle {
-			font-weight: bold;
-			margin: 0 10px;
-		}
-		.docTellList.layout-row {
-			margin: 3px;
-		}
-		.docTellOffice {
-			font-weight: bold;	
-			margin: 0 10px;
-		}
-		.rating{
-		  color: #a9a9a9;
-		  margin: 0 10px;
-		  padding: 0;
-		  line-height: 16px;
-		}
+	
+	.docNameList {
+		padding:0;
+		margin:0;
+		font-weight: bold;
+		
+	}
+	.docExpertiseList {
+		font-size: 17px;
+		color: #0075bb;
+		margin-right: 5px;			
+	}
+	.docBtnList button {
+		background: #7F345B !important;
+		border-radius: 5px;
+		color: #fff;
+	}
+	.docAddrTitle {
+		font-weight: bold;
+		margin: 0 10px;
+	}
+	.docTellList.layout-row {
+		margin: 3px;
+	}
+	.docTellOffice {
+		font-weight: bold;	
+		margin: 0 10px;
+	}
+	.rating{
+	  color: #a9a9a9;
+	  margin: 0 10px;
+	  padding: 0;
+	  line-height: 16px;
+	}
 
-		ul.rating {
-		  display: inline-block;
-		}
+	ul.rating {
+	  display: inline-block;
+	}
 
-		.rating li {
-		  list-style-type: none;
-		  display: inline-block;
-		  padding: 1px;
-		  text-align: center;
-		  font-weight: bold;
-		  cursor: pointer;
-		}
-
-		.rating .filled {
-		   color: #c9beff;
-		   outline:none;
-		}
-		hr.borderStyleList {
-			border: 0;
-			height: 2px;
-			background-image: -webkit-linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
-			background-image: -moz-linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
-			background-image: -ms-linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
-			background-image: -o-linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
-			background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
-			width: 100%;
-		}
-		.md-steppers-header-region {
-  			  z-index: 0;
-		}
-		.alignSelect{
-		    min-height: 58px !important;
-		}
-		.setCursor{
-        	cursor: pointer;
-            outline:none;
-        }
-        .removeOutline{
-            outline:none;
-        }
-
-		#cityComboBox md-select-value {
-			border: none !important;
-		}
-		.menImgClass{
-			background-image: url('../images/Man.jpg');
-		}
-		.womanImgClass{
-			background-image: url('../images/Woman.jpg');
-		}
+	.rating li {
+	  list-style-type: none;
+	  display: inline-block;
+	  padding: 1px;
+	  text-align: center;
+	  font-weight: bold;
+	  cursor: pointer;
+	}
+	.rating .filled {
+	   color: #c9beff;
+	   outline:none;
+	}
+	#cityComboBox md-select-value {
+		border: none !important;
+	}
+	.menImgClass{
+		background-image: url('../images/Man.jpg');
+	}
+	.womanImgClass{
+		background-image: url('../images/Woman.jpg');
+	}
 </style>
 <div ng-init="design_30255(this)" style="display:none"></div></div>
-		</div>
+	</div>

@@ -21,30 +21,69 @@ app = angular.module("APP").controller("Ctrl190479", ['$rootScope','$scope', '$h
 	
 $scope.makeDesign_293190 = function(param){ 
 	 $rootScope.design_10111($scope,param); 
-} 
+} ;
 
 $scope.makeDesign_272365 = function(param){ 
 	 $rootScope.design_20224($scope,param); 
-} 
- 
+};
+    // auto Focus
+    window.onload = function() {
+        var input = document.getElementById("part[0]").focus();
+    };
 
- 
- 
- 	$rootScope.startTimer = function(limit,variable,step)
-	{
-		$rootScope.__step = step;
-		$rootScope[variable] = limit;
-		var timer = function() {
-			if($rootScope[variable] > 0 ) {
-				$rootScope[variable] = $rootScope[variable] - 1;
-				$timeout(timer, step);
+    // countdown Timer
+    $scope.showCountDownTimer = true ;
+    $scope.resendButton = true ;
+    $scope.counter = localStorage.getItem("__localStorage.__expirationTime")/1000;
+    if($scope.counter !== 0 || $scope.counter !== null) {
+        $scope.onTimeout = function () {
+            if ($scope.counter > 0) {
+                $scope.counter--;
+            }else{
+                $scope.resendButton = false ;
 			}
-		}
-		timer();
-	}
+            myTimeout = $timeout($scope.onTimeout, 1000);
+        };
+        var myTimeout = $timeout($scope.onTimeout, 1000);
+    }else {
+        $scope.showCountDownTimer = false ;
+    }
+
+    // verify input properties
+    $scope.part=[];
+
+
 }]);
+
+// filter for count down timer
+app.filter('secondsToDateTime', [function() {
+    return function(seconds) {
+        return new Date(1970, 0, 1).setSeconds(seconds);
+    };
+}]);
+
 app.requires.push('ngMaterial','ngStorage','oc.lazyLoad','pascalprecht.translate','ngMessages','ngMask');
 
+//directive for going to next input
+app.directive("moveNextOnMaxlength", function() {
+    return {
+        restrict: "A",
+        link: function($scope, element, attrs,newValue) {
+            element.on("input", function(e) {
+
+                if(element.val().length == element.attr("maxlength")) {
+                    //alert(element.attr("maxlength"))
+                    var $nextElement = element.next();
+                    if($nextElement.length) {
+                        $nextElement[0].focus();
+                    }
+                }
+            });
+        }
+    }
+});
+
+//
  app.directive('validNumber', function() {
   return {
     require: '?ngModel',

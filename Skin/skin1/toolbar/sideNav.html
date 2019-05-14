@@ -1,6 +1,8 @@
-<div oc-lazy-load="{ name: 'YourApp', files: [skinPath+'js/sideNav.js?r='+rand,skinPath+'css/sideNav.css?r='+rand] }">	
-	<div ng-controller="sidenavCtrl" layout-padding>
-		<md-button class="md-icon-button" aria-label="Settings" ng-click="toggleSidenav('app-side-left')">
+<!--{{dashboardParam[dashboardName].color}}-->
+<div oc-lazy-load="{ name: 'YourApp', files: [skinPath+'js/sideNav.js?r='+rand,skinPath+'css/sideNav.css?r='+rand] }">
+	 
+	<div ng-controller="sidenavCtrl" >
+		<md-button class="md-icon-button" aria-label="Settings" ng-click="toggleRight()">
 			<md-icon class="toolbarIcons">menu</md-icon>
 		</md-button>
 	</div>

@@ -1,7 +1,7 @@
 <div oc-lazy-load="{ name: 'YourApp', files: [skinPath+'js/sideNav.js?r='+rand] }">
 	<div ng-controller="sidenavCtrl">
-		<md-sidenav md-component-id="app-side-left" layout="column" class="md-whiteframe-z1">
-			<md-toolbar layout="column">
+		<md-sidenav style="width: 217px;" class="md-sidenav-right" md-component-id="right" layout="column">
+			<md-toolbar>
 				<div class="sideVavBox" layout="row" layout-align="space-around center">
 					<!--logo-->		
 						<div ng-include="skinPath+'toolbar/logo.html?r='+rand"></div>
@@ -27,7 +27,7 @@
 			</div-->
 			<!---->
 			<!-- BEGIN LEFT SIDE NAVIGATION -->
-			<md-content flex role="navigation" class="whiteTxtToolbar sideVavBox">
+			<md-content style="background: #444444;" flex role="navigation" class="whiteTxtToolbar sideVavBox">
 				<div ng-include="'Content/'+dashboardParam[dashboardName].sideNavPageContentId+'.html'"></div>
 				<!--ul class="docs-menu">
 					<li class="parent-list-item">

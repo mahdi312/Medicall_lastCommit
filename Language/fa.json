@@ -9,6 +9,12 @@
 	"TEXT_ALIGN_INVERSE": "left",
 	"FOOTER_INFORMATION": "اطلاعات پاورقی",
 
+	"iAMDoctor":"من پزشک هستم",
+	"zendegiNegar":"زندگی نگار",
+	"booking":"نوبت دهی",
+	"searchDr":"جستجوی پزشک",
+	"EXIT_CONFIRM":"آیا برای خروج مطمئن هستید؟",
+
 	"THIS_FIELD_IS_REQUIRED": "وارد نمودن این فیلد اجباری میباشد",
 	"THE_NUMBER_IS_INVALID": "شماره معتبر نمیباشد.",
 	"ENTER_FIRST_NAME": "نام را وارد نمایید",

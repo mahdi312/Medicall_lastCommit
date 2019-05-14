@@ -8,6 +8,9 @@
 	"TEXT_ALIGN_INVERSE": "right",
 	"FOOTER_INFORMATION": "@ Footer Information",
 
+	"EXIT_CONFIRM":"Are You Sure?",
+
+
 	"THIS_FIELD_IS_REQUIRED": "This is required.",
 	"THE_NUMBER_IS_INVALID": "The number is invalid.",
 	"ENTER_FIRST_NAME": "Enter First Name",

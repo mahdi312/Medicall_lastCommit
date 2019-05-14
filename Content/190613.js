@@ -25,12 +25,34 @@ $scope.makeDesign_272365 = function(param){
 
 $scope.makeDesign_293190 = function(param){ 
 	 $rootScope.design_10111($scope,param); 
-} 
- 
+};
 
- 
- 
- 	$rootScope.startTimer = function(limit,variable,step)
+    // auto Focus
+    window.onload = function() {
+        var input = document.getElementById("part[0]").focus();
+    };
+
+
+    $scope.showCountDownTimer = true ;
+    $scope.resendButton = true ;
+    $scope.counter = localStorage.getItem("__localStorage.__expirationTime")/1000;
+    if($scope.counter !== 0 || $scope.counter !== null) {
+        $scope.onTimeout = function () {
+            if ($scope.counter > 0) {
+                $scope.counter--;
+            }else{
+                $scope.resendButton = false ;
+            }
+            myTimeout = $timeout($scope.onTimeout, 1000);
+        };
+        var myTimeout = $timeout($scope.onTimeout, 1000);
+    }else {
+        $scope.showCountDownTimer = false ;
+    }
+
+    $scope.part=[];
+
+    $rootScope.startTimer = function(limit,variable,step)
 	{
 		$rootScope.__step = step;
 		$rootScope[variable] = limit;
@@ -39,11 +61,37 @@ $scope.makeDesign_293190 = function(param){
 				$rootScope[variable] = $rootScope[variable] - 1;
 				$timeout(timer, step);
 			}
-		}
+		};
 		timer();
 	}
 }]);
+
+app.filter('secondsToDateTime', [function() {
+    return function(seconds) {
+        return new Date(1970, 0, 1).setSeconds(seconds);
+    };
+}]);
+
 app.requires.push('ngMaterial','ngStorage','oc.lazyLoad','pascalprecht.translate','ngMessages','ngMask');
+
+app.directive("moveNextOnMaxlength", function() {
+    return {
+        restrict: "A",
+        link: function($scope, element, attrs,newValue) {
+            element.on("input", function(e) {
+
+                if(element.val().length == element.attr("maxlength")) {
+                    //alert(element.attr("maxlength"))
+                    var $nextElement = element.next();
+                    if($nextElement.length) {
+                        $nextElement[0].focus();
+                    }
+                }
+            });
+        }
+    }
+});
+
 
  app.directive('validNumber', function() {
   return {

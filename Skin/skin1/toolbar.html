@@ -1,8 +1,8 @@
 <div ng-include="skinPath+'toolbar/navBar.html?r='+rand"></div>
 <div oc-lazy-load="{ name: 'YourApp', files: [skinPath+'css/toolbar.css?r='+rand] }">
-<md-toolbar layout="row" layout-xs="column" >
-	<div class="toolBarBack" layout="row" flex="100" >
-		<div layout="row" class="part1" flex-xs="100">
+<md-toolbar flex="100" id="patiantDBToolbar" style="background-color: #00c6d7 !important;height: 45px !important;" layout="row" layout-aling="space-between center">
+	<div layout="row" class="toolBarBack" style="width:100%" >
+		<div layout="row" layout-align="start center" class="part1">
 			<!--logo-->
 			<div ng-include="skinPath+'toolbar/logo.html?r='+rand"></div>
 			<!--logo-->	
@@ -12,16 +12,18 @@
 			<div ng-include="skinPath+'toolbar/sideNav.html?r='+rand"></div>
 			<!--sideNav-->		
 		</div>
-		<div flex="100"></div>
-		<div layout="row" class="part2" flex-xs="100">
+		<div  flex="100" layout="row" layout-align="end center" class="part2">
 			<!-- SEARCH -->			
 			<div ng-include="skinPath+'toolbar/search.html?r='+rand"></div>
-			<!-- SEARCH -->			<!-- LANGUAGE -->
-			<div ng-include="skinPath+'toolbar/language.html?r='+rand"></div>
-			<!-- LANGUAGE -->
-			<!-- BEGIN USER ACCOUNT -->
+			<!-- SEARCH -->
+			<!-- Exit -->
+			<div ng-include="skinPath+'toolbar/exit.html?r='+rand"></div>
+			<!-- BEGIN USER ACCOUNT
 			<div ng-include="skinPath+'toolbar/account.html?r='+rand"></div>
-			<!-- END USER ACCOUNT -->
+			END USER ACCOUNT -->
+			<!-- LANGUAGE -->
+			<div ng-include="skinPath+'toolbar/language.html?r='+rand"></div>
+			<div style="color:red">{{languageName}}</div>
 		</div>
 	</div>
 </md-toolbar>

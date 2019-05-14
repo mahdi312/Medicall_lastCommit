@@ -3,6 +3,8 @@ angular.module("APP").controller("Design_20224", ['$rootScope', '$scope', '$http
 ////////////////// code for action : compareSecondCode 
 
     $rootScope.design_20224 = function ($scope, param, $event) {
+        $scope.Form.verifyCode = $scope.Form.verifyCode1.toString()+$scope.Form.verifyCode2.toString()+$scope.Form.verifyCode3.toString()+$scope.Form.verifyCode4;
+
         $scope.nationalCode = localStorage.getItem("__localStorage.__nationalCode");
 
         $scope.SmsObject = {};

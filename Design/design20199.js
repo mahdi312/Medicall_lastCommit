@@ -3,7 +3,8 @@ angular.module("APP").controller("Design_20199", ['$rootScope', '$scope', '$http
 ////////////////// code for action : checkPatientSMS 
 
 $rootScope.design_20199 = function($scope,param,$event){
-	$scope.SmsObject = {} ;
+    $scope.Form.verifyCode = $scope.Form.verifyCode1.toString()+$scope.Form.verifyCode2.toString()+$scope.Form.verifyCode3.toString()+$scope.Form.verifyCode4;
+    $scope.SmsObject = {} ;
 	$scope.SmsObject.input = $scope.Form.verifyCode;
 	$scope.SmsObject.input1 = $rootScope.smsData;
 	url= 'http://172.16.201.42:7001/ehealth-ws-1.2/rest/api/v1/membership/signup/patient/sms/check';

@@ -3,6 +3,7 @@ angular.module("APP").controller("Design_20197", ['$rootScope', '$scope', '$http
 ////////////////// code for action : compareVerifyCode 
 
     $rootScope.design_20197 = function ($scope, param, $event) {
+        $scope.Form.verifyCode = $scope.Form.verifyCode1.toString()+$scope.Form.verifyCode2.toString()+$scope.Form.verifyCode3.toString()+$scope.Form.verifyCode4;
         $scope.SmsObject = {};
         $scope.SmsObject.input = $scope.Form.verifyCode;
         $scope.SmsObject.input1 = $rootScope.smsData;
